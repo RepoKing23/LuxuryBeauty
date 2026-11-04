@@ -1,9 +1,9 @@
 # Luxury Beauty by Cleo R. — static site (https://luxurybeautyaesthetic.com)
 
-React site that is **prerendered to plain HTML at build time**. Every page ships with its full content, title, meta tags and JSON-LD in the HTML, then React hydrates it for client-side navigation. No server and no runtime build: Vercel serves the committed files as-is.
+React site that is **prerendered to plain HTML at build time**. Every page ships with its full content, title, meta tags and JSON-LD in the HTML, then React hydrates it for client-side navigation. No server: Vercel builds once and serves static files.
 
 ## Edit → build → deploy
-Source lives in `src/`. Generated files (`index.html`, every `*/index.html`, `404.html`, `sitemap.xml`, `js/app.*.js`, `styles.*.css`) are **build output and are committed**. Don't edit them by hand.
+Source lives in `src/`. The build writes the deployable site to `public/` (git-ignored). Vercel runs `npm run build` on every push, so you only commit source changes.
 
 ```bash
 npm install          # once
@@ -11,7 +11,7 @@ npm run build        # bundles React (production), prerenders all pages, rewrite
 node tools/serve.mjs # preview at http://localhost:4173
 npm run images       # converts any new PNG/JPG in assets/images to WebP
 ```
-Commit the regenerated files and push. On Vercel use Framework Preset **Other**, with Build Command, Output Directory and Root Directory empty.
+Commit and push. `vercel.json` sets the build command and `public` as the output directory. Use Framework Preset **Other**.
 
 ## Where things are
 - `src/content/seoMeta.js`: titles, descriptions, URLs and all JSON-LD schema (business, service, FAQ, breadcrumbs).

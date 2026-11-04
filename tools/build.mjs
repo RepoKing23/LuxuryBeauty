@@ -1,5 +1,5 @@
 // Build: bundles the React app (production), prerenders every route to static HTML, writes sitemap.
-// Run: npm run build   (output is committed; Vercel serves the static files as-is)
+// Run: npm run build   (writes the deployable site to public/, which Vercel serves)
 import {build} from 'esbuild';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -7,6 +7,11 @@ import crypto from 'node:crypto';
 import {createRequire} from 'node:module';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const OUT = path.join(ROOT, 'public');
+fs.rmSync(OUT, {recursive: true, force: true});
+fs.mkdirSync(OUT, {recursive: true});
+fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), {recursive: true});
+fs.copyFileSync(path.join(ROOT, 'robots.txt'), path.join(OUT, 'robots.txt'));
 const SRC = p => path.join(ROOT, 'src', p);
 const read = p => fs.readFileSync(SRC(p), 'utf8');
 const require = createRequire(import.meta.url);
@@ -38,10 +43,9 @@ const client = await build({...common, stdin: {contents: clientEntry, loader: 'j
   format: 'iife', platform: 'browser', target: 'es2019', minify: true});
 const js = client.outputFiles[0].text;
 const hash = crypto.createHash('sha1').update(js).digest('hex').slice(0, 10);
-fs.mkdirSync(path.join(ROOT, 'js'), {recursive: true});
-for (const f of fs.readdirSync(path.join(ROOT, 'js'))) if (/^app\.[0-9a-f]{10}\.js$/.test(f)) fs.unlinkSync(path.join(ROOT, 'js', f));
+fs.mkdirSync(path.join(OUT, 'js'), {recursive: true});
 const jsName = `app.${hash}.js`;
-fs.writeFileSync(path.join(ROOT, 'js', jsName), js);
+fs.writeFileSync(path.join(OUT, 'js', jsName), js);
 
 // ---- CSS: self-hosted fonts + tokens + base, minified, hashed ----
 const {transform} = await import('esbuild');
@@ -49,9 +53,8 @@ const strip = t => t.replace(/@import[^;]*;/g, '');
 const rawCss = ['fonts.css', 'tokens/colors.css', 'tokens/typography.css', 'tokens/spacing.css', 'tokens/base.css', 'base.css'].map(f => strip(read(f))).join('\n');
 const cssOut = (await transform(rawCss, {loader: 'css', minify: true})).code;
 const cssHash = crypto.createHash('sha1').update(cssOut).digest('hex').slice(0, 10);
-for (const f of fs.readdirSync(ROOT)) if (/^styles\.[0-9a-f]{10}\.css$/.test(f)) fs.unlinkSync(path.join(ROOT, f));
 const cssName = `styles.${cssHash}.css`;
-fs.writeFileSync(path.join(ROOT, cssName), cssOut);
+fs.writeFileSync(path.join(OUT, cssName), cssOut);
 
 // ---- server bundle (prerender) ----
 const serverEntry = `
@@ -128,7 +131,7 @@ const routes = lb.paths();
 const written = [];
 for (const r of routes) {
   const file = r.page === 'NotFound' ? '404.html' : (r.path === '/' ? 'index.html' : r.path.slice(1) + '/index.html');
-  const out = path.join(ROOT, file);
+  const out = path.join(OUT, file);
   fs.mkdirSync(path.dirname(out), {recursive: true});
   fs.writeFileSync(out, page(r));
   written.push({...r, file, robots: lb.meta(r.page, r.key).robots});
@@ -138,7 +141,7 @@ for (const r of routes) {
 const today = new Date().toISOString().slice(0, 10);
 const urls = written.filter(r => !/noindex/.test(r.robots)).map(r =>
   `  <url><loc>${SITE.url}${r.path === '/' ? '/' : r.path}</loc><lastmod>${today}</lastmod></url>`);
-fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
+fs.writeFileSync(path.join(OUT, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
 console.log(`bundle js/${jsName} ${(js.length / 1024).toFixed(0)} KB; ${written.length} pages; ${urls.length} in sitemap`);
 process.exit(0);
