@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"LuxuryBeautyByCleoRDesignSystem_8fa9a4","components":[{"name":"ConcernList","sourcePath":"components/content/ConcernList.jsx"},{"name":"FaqList","sourcePath":"components/content/FaqList.jsx"},{"name":"ReviewCard","sourcePath":"components/content/ReviewCard.jsx"},{"name":"SectionHeading","sourcePath":"components/content/SectionHeading.jsx"},{"name":"TreatmentCard","sourcePath":"components/content/TreatmentCard.jsx"},{"name":"TreatmentCarousel","sourcePath":"components/content/TreatmentCarousel.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"TextLink","sourcePath":"components/core/TextLink.jsx"},{"name":"BookingCta","sourcePath":"components/layout/BookingCta.jsx"},{"name":"PageHero","sourcePath":"components/layout/PageHero.jsx"},{"name":"SiteFooter","sourcePath":"components/layout/SiteFooter.jsx"},{"name":"SiteHeader","sourcePath":"components/layout/SiteHeader.jsx"}],"sourceHashes":{"components/content/ConcernList.jsx":"34d35d969017","components/content/FaqList.jsx":"256e44f658fd","components/content/ReviewCard.jsx":"1976741f9644","components/content/SectionHeading.jsx":"d4ec4223e9eb","components/content/TreatmentCard.jsx":"cf6d417fb17a","components/content/TreatmentCarousel.jsx":"3d3a176705ef","components/core/Button.jsx":"caf9d4fa7b80","components/core/Logo.jsx":"882fd5a7e422","components/core/TextLink.jsx":"b461321bda4a","components/layout/BookingCta.jsx":"011cc509345c","components/layout/PageHero.jsx":"e604487e7d03","components/layout/SiteFooter.jsx":"acc7e5eb3fd2","components/layout/SiteHeader.jsx":"e28c1f76747f","ui_kits/website/ConcernDetail.jsx":"2c1c52decfc6","ui_kits/website/Home.jsx":"7e0a013a1481","ui_kits/website/HomeSeo.jsx":"066f3fb7ff2b","ui_kits/website/MorePages.jsx":"46277f359560","ui_kits/website/Pages.jsx":"abe9dfcb8548","ui_kits/website/ServiceArea.jsx":"13be8819940a","ui_kits/website/Shared.jsx":"4c74287c4b50","ui_kits/website/TreatmentDetail.jsx":"6daead4b4ee8","ui_kits/website/Treatments.jsx":"eee9f54e5289","ui_kits/website/areaContent.js":"8038307f09fe","ui_kits/website/concernContent.js":"262bb424584c","ui_kits/website/data.js":"a11e0bb95276","ui_kits/website/scrollReveal.js":"694c4a2074e3","ui_kits/website/seoMeta.js":"8327feb546d3","ui_kits/website/treatmentContent.js":"e06aac4f1127"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"LuxuryBeautyByCleoRDesignSystem_8fa9a4","components":[{"name":"ConcernList","sourcePath":"components/content/ConcernList.jsx"},{"name":"FaqList","sourcePath":"components/content/FaqList.jsx"},{"name":"ReviewCard","sourcePath":"components/content/ReviewCard.jsx"},{"name":"SectionHeading","sourcePath":"components/content/SectionHeading.jsx"},{"name":"TreatmentCard","sourcePath":"components/content/TreatmentCard.jsx"},{"name":"TreatmentCarousel","sourcePath":"components/content/TreatmentCarousel.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"TextLink","sourcePath":"components/core/TextLink.jsx"},{"name":"BookingCta","sourcePath":"components/layout/BookingCta.jsx"},{"name":"PageHero","sourcePath":"components/layout/PageHero.jsx"},{"name":"SiteFooter","sourcePath":"components/layout/SiteFooter.jsx"},{"name":"SiteHeader","sourcePath":"components/layout/SiteHeader.jsx"}],"sourceHashes":{"components/content/ConcernList.jsx":"34d35d969017","components/content/FaqList.jsx":"256e44f658fd","components/content/ReviewCard.jsx":"1976741f9644","components/content/SectionHeading.jsx":"d4ec4223e9eb","components/content/TreatmentCard.jsx":"cf6d417fb17a","components/content/TreatmentCarousel.jsx":"3d3a176705ef","components/core/Button.jsx":"caf9d4fa7b80","components/core/Logo.jsx":"882fd5a7e422","components/core/TextLink.jsx":"b461321bda4a","components/layout/BookingCta.jsx":"011cc509345c","components/layout/PageHero.jsx":"e604487e7d03","components/layout/SiteFooter.jsx":"acc7e5eb3fd2","components/layout/SiteHeader.jsx":"e28c1f76747f","ui_kits/website/ConcernDetail.jsx":"2c1c52decfc6","ui_kits/website/Home.jsx":"93d0f5e43fd3","ui_kits/website/HomeSeo.jsx":"066f3fb7ff2b","ui_kits/website/MorePages.jsx":"46277f359560","ui_kits/website/Pages.jsx":"26da9e43b91e","ui_kits/website/ServiceArea.jsx":"c07d672f0b72","ui_kits/website/Shared.jsx":"4c74287c4b50","ui_kits/website/TreatmentDetail.jsx":"6daead4b4ee8","ui_kits/website/Treatments.jsx":"eee9f54e5289","ui_kits/website/areaContent.js":"e1688461a634","ui_kits/website/concernContent.js":"262bb424584c","ui_kits/website/data.js":"a11e0bb95276","ui_kits/website/scrollReveal.js":"694c4a2074e3","ui_kits/website/seoMeta.js":"73166d6707a8","ui_kits/website/treatmentContent.js":"e06aac4f1127"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -1879,7 +1879,7 @@ function Home({
       maxWidth: 560,
       fontSize: 16
     }
-  }, "Luxury Beauty is a Nurse Practitioner\u2013led medical spa in Oakville for Botox, dermal fillers and skin treatments. It\u2019s founded by Cleo R., a Board-Certified Nurse Practitioner who assesses your features, skin and goals before recommending anything."), /*#__PURE__*/React.createElement("div", {
+  }, "Luxury Beauty by Cleo R. is a Nurse Practitioner\u2013led medical spa in Oakville for Botox, dermal fillers and skin treatments. It\u2019s founded by Cleo Rukovo, a Board-Certified Nurse Practitioner who assesses your features, skin and goals before recommending anything."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       flexWrap: "wrap",
@@ -3079,7 +3079,7 @@ function About({
     style: H("clamp(52px,6vw,84px)", {
       marginBottom: 32
     })
-  }, "It didn\u2019t begin in a spa.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "It began in nursing.")), ["In 2013, Cleo started her career as a Registered Nurse, dedicating herself to patient care and developing a deep appreciation for the complexity of the human body.", "Over time, that clinical foundation grew into a broader fascination with how health, confidence, and appearance intersect.", "In 2022, she became a Nurse Practitioner — an advanced foundation from which to approach aesthetic medicine."].map(p => /*#__PURE__*/React.createElement("p", {
+  }, "It didn\u2019t begin in a spa.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "It began in nursing.")), ["In 2013, Cleo Rukovo started her career as a Registered Nurse, dedicating herself to patient care and developing a deep appreciation for the complexity of the human body.", "Over time, that clinical foundation grew into a broader fascination with how health, confidence, and appearance intersect.", "In 2022, she became a Nurse Practitioner — an advanced foundation from which to approach aesthetic medicine."].map(p => /*#__PURE__*/React.createElement("p", {
     key: p,
     style: {
       marginBottom: 22,
@@ -3109,7 +3109,88 @@ function About({
     })
   }, "A NP first. An aesthetic practitioner with intention."), /*#__PURE__*/React.createElement("p", null, "Cleo\u2019s advanced clinical background influences every aspect of her approach. Her role is to assess, educate, guide, treat appropriately, and provide thoughtful care throughout the experience.")), /*#__PURE__*/React.createElement(RuledList, {
     items: ["Medical history", "Facial anatomy", "Muscle movement", "Skin health", "Individual goals", "Treatment suitability"]
-  })), /*#__PURE__*/React.createElement(BookingCta, {
+  })), /*#__PURE__*/React.createElement("section", {
+    id: "video-highlights",
+    style: SP
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "space-between",
+      alignItems: "end",
+      gap: 24,
+      marginBottom: 44
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginBottom: 20,
+      fontSize: 9,
+      fontWeight: 600,
+      letterSpacing: "0.2em",
+      textTransform: "uppercase",
+      color: "var(--brand-green)"
+    }
+  }, "Video highlights"), /*#__PURE__*/React.createElement("h2", {
+    style: H("clamp(52px,6vw,84px)", {
+      maxWidth: 760
+    })
+  }, "Industry conversations with Cleo.")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      maxWidth: 440
+    }
+  }, "Hear Cleo Rukovo, NP, in conversation with fellow beauty professionals about her approach, her experience and where aesthetic care is heading.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,420px),1fr))",
+      gap: "40px 3vw"
+    }
+  }, [["PJQTgQVG7VA", "Industry conversation 01"], ["W4n_xPuKi1E", "Industry conversation 02"]].map(([id, title]) => /*#__PURE__*/React.createElement("article", {
+    key: id
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      aspectRatio: "16 / 9",
+      overflow: "hidden",
+      background: "var(--foreground)"
+    }
+  }, /*#__PURE__*/React.createElement("iframe", {
+    src: "https://www.youtube-nocookie.com/embed/" + id + "?rel=0",
+    title: title + " with Cleo Rukovo, NP",
+    loading: "lazy",
+    allow: "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+    referrerPolicy: "strict-origin-when-cross-origin",
+    allowFullScreen: true,
+    style: {
+      position: "absolute",
+      inset: 0,
+      width: "100%",
+      height: "100%",
+      border: 0
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "space-between",
+      alignItems: "baseline",
+      gap: 12,
+      marginTop: 18
+    }
+  }, /*#__PURE__*/React.createElement("h3", {
+    style: H(30)
+  }, title), /*#__PURE__*/React.createElement("a", {
+    href: "https://www.youtube.com/watch?v=" + id,
+    target: "_blank",
+    rel: "noreferrer",
+    style: {
+      fontSize: 9,
+      fontWeight: 600,
+      letterSpacing: "0.2em",
+      textTransform: "uppercase",
+      color: "inherit",
+      textUnderlineOffset: 4
+    }
+  }, "Watch on YouTube \u2197")))))), /*#__PURE__*/React.createElement(BookingCta, {
     image: LB_IMG + "cleo-book-now.webp",
     onClick: e => {
       e.preventDefault();
@@ -3121,16 +3202,18 @@ function Contact() {
   const {
     PageHero
   } = window.LuxuryBeautyByCleoRDesignSystem_8fa9a4;
+  const ICON = n => "https://unpkg.com/lucide-static@0.469.0/icons/" + n + ".svg";
   const Opt = ({
     t,
     x,
     l,
-    href
+    href,
+    icon
   }) => {
     const [h, setH] = React.useState(false);
     return /*#__PURE__*/React.createElement("a", {
       href: href,
-      target: "_blank",
+      target: href.startsWith("tel:") ? undefined : "_blank",
       rel: "noreferrer",
       onMouseEnter: () => setH(true),
       onMouseLeave: () => setH(false),
@@ -3141,10 +3224,34 @@ function Contact() {
         minHeight: 430,
         background: "var(--surface-warm)",
         padding: 38,
+        color: "inherit",
+        textDecoration: "none",
         opacity: h ? 0.8 : 1,
         transition: "opacity 150ms"
       }
-    }, /*#__PURE__*/React.createElement("h2", {
+    }, /*#__PURE__*/React.createElement("span", {
+      "aria-hidden": true,
+      style: {
+        display: "grid",
+        placeItems: "center",
+        width: 64,
+        height: 64,
+        marginBottom: "auto",
+        borderRadius: "50%",
+        border: "1px solid var(--brand-green)",
+        color: h ? "var(--background)" : "var(--brand-green)",
+        background: h ? "var(--brand-green)" : "transparent",
+        transition: "background 150ms,color 150ms"
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 26,
+        height: 26,
+        background: "currentColor",
+        WebkitMask: `url(${ICON(icon)}) center/contain no-repeat`,
+        mask: `url(${ICON(icon)}) center/contain no-repeat`
+      }
+    })), /*#__PURE__*/React.createElement("h2", {
       style: H(45, {
         marginBottom: 20
       })
@@ -3181,26 +3288,44 @@ function Contact() {
     t: "Call Cleo",
     x: "Speak directly with the practice to begin your consultation.",
     l: "416-294-0452 \u2197",
-    href: "tel:+14162940452"
+    href: "tel:+14162940452",
+    icon: "phone"
   }), /*#__PURE__*/React.createElement(Opt, {
     t: "Connect socially",
     x: "Follow the practice and send Cleo a direct message.",
     l: "@luxury_beauty_aestheticz \u2197",
-    href: "https://www.instagram.com/luxury_beauty_aestheticz/"
+    href: "https://www.instagram.com/luxury_beauty_aestheticz/",
+    icon: "instagram"
   }), /*#__PURE__*/React.createElement(Opt, {
     t: "Visit in Oakville",
     x: "3060 Preserve Dr, Oakville, ON L6M 4L9, Canada",
     l: "Open in Google Maps \u2197",
-    href: "#"
+    href: "https://maps.app.goo.gl/8nuEqr8YRCzXv4A5A",
+    icon: "map-pin"
   })), /*#__PURE__*/React.createElement("section", {
     style: {
       ...SP,
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
-      gap: "9vw",
+      gap: "60px 9vw",
       background: "var(--surface-warm)"
     }
-  }, /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-start",
+      gap: 28
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "/assets/logo-icon.png",
+    alt: "Luxury Beauty by Cleo R. logo",
+    style: {
+      width: "clamp(96px,9vw,140px)",
+      height: "auto",
+      display: "block"
+    }
+  }), /*#__PURE__*/React.createElement("h2", {
     style: H("clamp(55px,6vw,82px)")
   }, "Luxury Beauty", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("small", {
     style: {
@@ -3212,7 +3337,7 @@ function Contact() {
       letterSpacing: "0.18em",
       textTransform: "uppercase"
     }
-  }, "by Cleo R.")), /*#__PURE__*/React.createElement("dl", {
+  }, "by Cleo R."))), /*#__PURE__*/React.createElement("dl", {
     style: {
       margin: 0,
       borderTop: "1px solid var(--border)"
@@ -3238,7 +3363,31 @@ function Contact() {
     style: {
       margin: 0
     }
-  }, b))))), /*#__PURE__*/React.createElement("section", {
+  }, b)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: "1 / -1",
+      position: "relative",
+      aspectRatio: "21 / 9",
+      minHeight: 360,
+      overflow: "hidden",
+      border: "1px solid var(--border)",
+      background: "var(--surface)"
+    }
+  }, /*#__PURE__*/React.createElement("iframe", {
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.536621236177!2d-79.73647509999999!3d43.47558569999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b5d02bab7dd91%3A0xd1e4c7aa4bbefca2!2sLuxury%20Beauty%20By%20Cleo%20R!5e0!3m2!1sen!2sca!4v1789959453969!5m2!1sen!2sca",
+    title: "Map to Luxury Beauty by Cleo R., 3060 Preserve Dr, Oakville",
+    loading: "lazy",
+    referrerPolicy: "no-referrer-when-downgrade",
+    allowFullScreen: true,
+    style: {
+      position: "absolute",
+      inset: 0,
+      width: "100%",
+      height: "100%",
+      border: 0,
+      filter: "grayscale(0.35)"
+    }
+  }))), /*#__PURE__*/React.createElement("section", {
     style: {
       background: "var(--brand-accent)",
       padding: "110px max(12vw,60px)",
@@ -3845,7 +3994,7 @@ function Locations({
   };
   const A = Object.entries(window.LB_AREAS);
   const MAP = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.536621236177!2d-79.73647509999999!3d43.47558569999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b5d02bab7dd91%3A0xd1e4c7aa4bbefca2!2sLuxury%20Beauty%20By%20Cleo%20R!5e0!3m2!1sen!2sca!4v1789959453969!5m2!1sen!2sca";
-  const faqs = [["Where is Luxury Beauty by Cleo R. located?", "Our only clinic is at 3060 Preserve Dr, Oakville, ON L6M 4L9, in north Oakville near Dundas Street."], ["Which areas do you serve?", "Clients visit from Oakville, Burlington, Milton and Mississauga, as well as the wider Halton and Peel region."], ["Is every location the same clinic?", "Yes. There is one clinic in Oakville, and Cleo R., NP, sees every client there herself."], ["How do I book?", "Call 416-294-0452 or send a direct message to @luxury_beauty_aestheticz on Instagram. Your first consultation is free."]];
+  const faqs = window.LB_LOCATION_FAQS;
   return /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(PageHero, {
     tone: "blush",
     title: "Med spa locations we serve.",
@@ -4011,7 +4160,6 @@ function Locations({
     }
   }));
 }
-window.LB_LOCATION_FAQS = null;
 Object.assign(window, {
   ServiceArea,
   Locations
@@ -4912,6 +5060,7 @@ window.LB_AREAS = {
     faqs: [["Is there a Nurse Practitioner–led med spa near Mississauga?", "Yes. Luxury Beauty by Cleo R. is in north Oakville at 3060 Preserve Dr, about 20 minutes from west Mississauga via Dundas Street West, or 25–30 minutes from central Mississauga via the QEW or Highway 403."], ["Who will I see at my appointment?", "Cleo R., a Board-Certified Nurse Practitioner and the founder of Luxury Beauty. She does every assessment and treatment herself."], ["Is the consultation free?", "Yes. Your first consultation is free. You’ll leave with honest advice and no pressure to book."], ["Which treatments are popular with Mississauga clients?", "Botox and neurotoxins, lip filler, dermal fillers and skin boosters. Fat dissolving, medical weight loss and IV infusions are also available."], ["Do you treat men?", "Yes. Luxury Beauty welcomes adults of all genders interested in personalized aesthetic and wellness care."], ["How do I book from Mississauga?", "Call 416-294-0452 or send a direct message to @luxury_beauty_aestheticz on Instagram."]]
   }
 };
+window.LB_LOCATION_FAQS = [["Where is Luxury Beauty by Cleo R. located?", "Our only clinic is at 3060 Preserve Dr, Oakville, ON L6M 4L9, in north Oakville near Dundas Street."], ["Which areas do you serve?", "Clients visit from Oakville, Burlington, Milton and Mississauga, as well as the wider Halton and Peel region."], ["Is every location the same clinic?", "Yes. There is one clinic in Oakville, and Cleo R., NP, sees every client there herself."], ["How do I book?", "Call 416-294-0452 or send a direct message to @luxury_beauty_aestheticz on Instagram. Your first consultation is free."]];
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/areaContent.js", error: String((e && e.message) || e) }); }
 
 // ui_kits/website/concernContent.js
@@ -5521,6 +5670,10 @@ window.LB_getMeta = (page, key) => {
       path: "/concerns/" + (c.slug || slugify(key))
     };
   } else m = M.pages[page] || M.pages.Home;
+  if (page === "Locations" && window.LB_hubSchema) m = {
+    ...m,
+    schema: window.LB_hubSchema()
+  };
   return {
     robots: IDX,
     ...m,
@@ -5610,6 +5763,97 @@ window.LB_applyMeta = (page, key) => {
   } else if (ld) ld.remove();
   return m;
 };
+window.LB_business = cities => {
+  const S = window.LB_SITE;
+  return {
+    "@type": "MedicalBusiness",
+    "@id": S.url + "/#business",
+    "name": S.name,
+    "url": S.url,
+    "telephone": "+1-416-294-0452",
+    "image": S.url + S.image,
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3060 Preserve Dr",
+      "addressLocality": "Oakville",
+      "addressRegion": "ON",
+      "postalCode": "L6M 4L9",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.4755857,
+      "longitude": -79.7364751
+    },
+    "hasMap": "https://maps.app.goo.gl/8nuEqr8YRCzXv4A5A",
+    "sameAs": ["https://www.instagram.com/luxury_beauty_aestheticz/"],
+    "areaServed": cities.map(c => ({
+      "@type": "City",
+      "name": c
+    })),
+    "founder": {
+      "@type": "Person",
+      "name": "Cleo R.",
+      "jobTitle": "Board-Certified Nurse Practitioner"
+    }
+  };
+};
+window.LB_hubSchema = () => {
+  const S = window.LB_SITE,
+    url = S.url + "/locations",
+    A = Object.values(window.LB_AREAS || {});
+  return {
+    "@context": "https://schema.org",
+    "@graph": [window.LB_business(["Oakville", ...A.map(a => a.city)]), {
+      "@type": "CollectionPage",
+      "@id": url,
+      "url": url,
+      "name": window.LB_META.pages.Locations.title,
+      "about": {
+        "@id": S.url + "/#business"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": S.url + "/"
+        }, {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Locations",
+          "item": url
+        }]
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Med Spa Oakville",
+          "url": S.url + "/"
+        }, ...A.map((a, i) => ({
+          "@type": "ListItem",
+          "position": i + 2,
+          "name": "Med Spa " + a.city,
+          "url": S.url + a.path
+        }))]
+      }
+    }, {
+      "@type": "FAQPage",
+      "mainEntity": (window.LB_LOCATION_FAQS || []).map(([q, a]) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": a
+        }
+      }))
+    }]
+  };
+};
 window.LB_areaSchema = key => {
   const A = (window.LB_AREAS || {})[key];
   if (!A) return null;
@@ -5617,42 +5861,7 @@ window.LB_areaSchema = key => {
     url = S.url + A.path;
   return {
     "@context": "https://schema.org",
-    "@graph": [{
-      "@type": "MedicalBusiness",
-      "@id": S.url + "/#business",
-      "name": S.name,
-      "url": S.url,
-      "telephone": "+1-416-294-0452",
-      "image": S.url + S.image,
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "3060 Preserve Dr",
-        "addressLocality": "Oakville",
-        "addressRegion": "ON",
-        "postalCode": "L6M 4L9",
-        "addressCountry": "CA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 43.4755857,
-        "longitude": -79.7364751
-      },
-      "hasMap": "https://maps.app.goo.gl/8nuEqr8YRCzXv4A5A",
-      "sameAs": ["https://www.instagram.com/luxury_beauty_aestheticz/"],
-      "areaServed": [{
-        "@type": "City",
-        "name": "Oakville"
-      }, {
-        "@type": "City",
-        "name": A.city
-      }],
-      "founder": {
-        "@type": "Person",
-        "name": "Cleo R.",
-        "jobTitle": "Board-Certified Nurse Practitioner"
-      }
-    }, {
+    "@graph": [window.LB_business(["Oakville", A.city]), {
       "@type": "WebPage",
       "@id": url,
       "url": url,

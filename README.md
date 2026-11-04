@@ -2,13 +2,12 @@
 
 Plain static site. No vercel.json and no build step: every page has its own folder with an index.html, which Vercel serves automatically.
 
-## Deploy to Vercel
+## Deploy
 1. Put the CONTENTS of this folder at the root of your GitHub repo. Delete any old vercel.json / now.json.
-2. Vercel → Add New → Project → import the repo.
-3. Framework Preset: Other. Build Command, Output Directory, Root Directory: empty.
-4. Deploy, then add luxurybeautyaesthetic.com under Settings → Domains.
+2. Vercel → Add New → Project → import the repo. Framework Preset: Other. Build Command, Output Directory, Root Directory: empty.
+3. Deploy, then add luxurybeautyaesthetic.com under Settings → Domains.
 
-## Pages (29, each with its own title/description/canonical/robots/Open Graph baked in)
+## Pages (29)
 - /
 - /treatments
 - /concerns
@@ -19,7 +18,7 @@ Plain static site. No vercel.json and no build step: every page has its own fold
 - /inclusive-care
 - /before-after
 - /contact
-- /locations (schema)
+- /locations
 - /policies
 - /privacy
 - /thank-you
@@ -35,20 +34,16 @@ Plain static site. No vercel.json and no build step: every page has its own fold
 - /concerns/facial-volume-definition
 - /concerns/skin-hydration-radiance
 - /concerns/wellness-weight-management
-- /med-spa-burlington (schema)
-- /med-spa-milton (schema)
-- /med-spa-mississauga (schema)
+- /med-spa-burlington
+- /med-spa-milton
+- /med-spa-mississauga
 - /concerns/lips → redirects to /treatments/lip-filler
-
-## Location pages (local SEO)
-- /locations: hub. Schema: MedicalBusiness (areaServed Oakville, Burlington, Milton, Mississauga), CollectionPage + ItemList + BreadcrumbList, FAQPage.
-- /med-spa-burlington, /med-spa-milton, /med-spa-mississauga. Schema: MedicalBusiness (areaServed Oakville + city), WebPage + BreadcrumbList, FAQPage.
-- Content lives in js/areaContent.js; titles/descriptions in js/seoMeta.js.
-- Validate after deploy: https://search.google.com/test/rich-results
 
 ## SEO
 - sitemap.xml: 25 indexable URLs; robots.txt points to it.
 - Noindex: /policies, /privacy, /thank-you, 404.html.
+- Location pages (/locations, /med-spa-burlington, /med-spa-milton, /med-spa-mississauga) include MedicalBusiness, BreadcrumbList and FAQPage schema.
+- After deploying: resubmit sitemap in Search Console; test schema at https://search.google.com/test/rich-results
 
 ## Run locally
 `npx serve .`
