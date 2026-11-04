@@ -1,49 +1,34 @@
 # Luxury Beauty by Cleo R. — static site (https://luxurybeautyaesthetic.com)
 
-Plain static site. No vercel.json and no build step needed: every page has its own folder with an index.html, which Vercel serves automatically.
+React site that is **prerendered to plain HTML at build time**. Every page ships with its full content, title, meta tags and JSON-LD in the HTML, then React hydrates it for client-side navigation. No server: Vercel builds once and serves static files.
 
-## Deploy to Vercel
-1. Put the CONTENTS of this folder at the root of your GitHub repo (index.html, js/, jsx/, assets/, treatments/, concerns/ … at top level). Delete any old vercel.json / now.json from the repo.
-2. Vercel → Add New → Project → import the repo.
-3. Framework Preset: Other. Build Command, Output Directory, Root Directory: empty.
-4. Deploy, then add luxurybeautyaesthetic.com under Settings → Domains.
+## Edit → build → deploy
+Source lives in `src/`. The build writes the deployable site to `public/` (git-ignored). Vercel runs `npm run build` on every push, so you only commit source changes.
+
+```bash
+npm install          # once
+npm run build        # bundles React (production), prerenders all pages, rewrites sitemap.xml
+node tools/serve.mjs # preview at http://localhost:4173
+npm run images       # converts any new PNG/JPG in assets/images to WebP
+```
+Commit and push. `vercel.json` sets the build command and `public` as the output directory. Use Framework Preset **Other**.
+
+## Where things are
+- `src/content/seoMeta.js`: titles, descriptions, URLs and all JSON-LD schema (business, service, FAQ, breadcrumbs).
+- `src/content/treatmentContent.js`, `concernContent.js`, `areaContent.js`, `data.js`: page copy.
+- `src/jsx/*.jsx`: page layouts. `src/ds.js`: shared components (header, footer, cards). `src/app.jsx`: router.
+- `vercel.json`: clean URLs, 301 redirects for removed pages, and cache headers.
 
 ## Pages
-Each URL has its own HTML file with its title, description, canonical, robots and Open Graph tags baked in (Google and link previews read them without JavaScript):
-- index.html
-- treatments/index.html
-- concerns/index.html
-- about/index.html
-- cleo-difference/index.html
-- your-visit/index.html
-- faq/index.html
-- inclusive-care/index.html
-- before-after/index.html
-- contact/index.html
-- policies/index.html
-- privacy/index.html
-- thank-you/index.html
-- 404.html
-- treatments/botox-neurotoxins/index.html
-- treatments/dermal-fillers/index.html
-- treatments/lip-filler/index.html
-- treatments/fat-dissolving/index.html
-- treatments/weight-loss/index.html
-- treatments/skin-boosters/index.html
-- treatments/iv-infusions/index.html
-- concerns/fine-lines-wrinkles/index.html
-- concerns/facial-volume-definition/index.html
-- concerns/skin-hydration-radiance/index.html
-- concerns/wellness-weight-management/index.html
-- concerns/lips/index.html → redirects to /treatments/lip-filler
+- `/`, `/treatments`, `/concerns`, `/about`, `/your-visit`, `/faq`, `/before-after`, `/contact`, `/locations`
+- `/treatments/{botox-neurotoxins, dermal-fillers, lip-filler, fat-dissolving, weight-loss, skin-boosters, iv-infusions}`
+- `/concerns/{under-eye-hollows-tired-eyes, jaw-clenching-teeth-grinding, smile-lines-marionette-lines}`
+- `/med-spa-burlington`, `/med-spa-milton`, `/med-spa-mississauga`
+- Noindex: `/policies`, `/privacy`, `/thank-you`, `404.html`
 
-## SEO
-- sitemap.xml lists the indexable pages; robots.txt points to it.
-- Noindex (meta robots, excluded from sitemap): /policies, /privacy, /thank-you, 404.html.
-- Google Search Console verification tag kept from the live site.
+Removed (301-redirected in `vercel.json`): `/cleo-difference` and `/inclusive-care` (merged into `/about`), and the four old concern pages that competed with treatment pages.
 
-## Structure
-- js/ds-bundle.js: design-system components · js/*.js: content, SEO meta, animations · jsx/: page components · styles.css + tokens/: design tokens · assets/: logo + photos
-
-## Run locally
-`npx serve .`
+## After deploying
+1. Resubmit `sitemap.xml` in Search Console and request indexing for `/about` and the three new concern pages.
+2. Test schema at https://search.google.com/test/rich-results
+3. Review the three new concern pages and the longer treatment sections with Cleo before launch (typical clinical norms; Cleo to confirm).
