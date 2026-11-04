@@ -1,39 +1,273 @@
 // Concern pages: problem-first template (causes → options → guide → expectations → care → FAQs). Lips 301s to /treatments/lip-filler.
 window.LB_CX={
-"Fine Lines & Wrinkles":{
-h1:"Fine Lines & Wrinkle Treatment in Oakville",line:"Softer lines, with your expression intact.",img:"treatment-botox.webp",
-first:"Cleo R., a Nurse Practitioner, offers wrinkle treatment in Oakville, with options matched to the kind of lines you have and how much change you want.",
-causes:[["Movement","Lines form where muscles crease the skin over and over: the forehead, between the brows and around the eyes."],["Collagen loss","From your mid-20s, skin makes less collagen each year, so creases stay after your face relaxes."],["Sun exposure","UV light breaks down collagen and elastin. It’s the biggest outside cause of early lines."],["Dehydration","Dry skin shows fine, crepey lines more, especially under the eyes and on the neck."]],
-options:[["Neuromodulator injections","Relaxes the muscles that crease the skin.","Lines that show when you move: forehead, frown lines, crow’s feet","botox"],["Skin boosters","Hydrates skin from within to soften fine, crepey lines.","Fine lines with dull or dry texture","skin"],["Dermal filler","Supports deeper folds that stay when your face is still.","Deep lines and folds at rest","fillers"]],
-guide:[["Lines appear when you frown, squint or smile","Neuromodulator injections"],["Lines stay when your face is relaxed","Filler, sometimes with a neuromodulator"],["Skin looks crepey or dull","Skin boosters"],["You’re in your 20s and want to slow lines","A low-dose neuromodulator plan and daily sunscreen"]],
-expect:["Movement lines soften over about 2 weeks.","Deep, etched lines improve, but may need a few visits or a combination of options.","Treatment can’t stop ageing. Regular care slows how deep lines set in."],
-care:["Wear SPF 30 or higher every day, including winter","Ask Cleo whether a nightly retinoid suits your skin","Moisturize morning and night","Avoid smoking, which speeds up collagen loss"],
-faqs:[["What’s the difference between fine lines and wrinkles?","Fine lines are shallow and often come from dryness or early movement. Wrinkles are deeper creases that stay when your face is still. Cleo matches the option to the type of line, so the difference changes your plan."],["What age should I start treatment?","There’s no set age. Some clients start in their late 20s to slow lines from forming. Others start later to soften lines they already have. Cleo will tell you honestly if you don’t need treatment yet."],["Can I treat wrinkles without Botox?","Yes. Skin boosters improve fine, crepey lines, and filler can support deeper folds. Neuromodulators work best for lines caused by movement, so Cleo will explain the trade-offs at your consultation."],["Will my lines get worse when treatment wears off?","No. Your lines return gradually to how they were before. With regular treatment, many clients find their lines set in less deeply over time."]]},
-"Facial Volume & Definition":{
-h1:"Facial Volume Loss Treatment in Oakville",line:"Restore what time has softened, in proportion.",img:"treatment-fillers.webp",
-first:"Cleo R., a Nurse Practitioner, treats facial volume loss in Oakville, from hollow cheeks and temples to a softer jawline, with a plan built around your whole face.",
-causes:[["Fat pads shift","The fat pads in your cheeks shrink and move lower with age, which flattens the mid-face."],["Bone changes","Facial bones slowly lose density, so the skin above has less support."],["Weight loss","Losing weight, including on a medical program, often shows first in the face."],["Genetics","Some people are born with flatter cheekbones or a less defined chin."]],
-options:[["Dermal filler","Restores structure in the cheeks, temples, chin and jaw.","Hollows, flat cheeks and a soft jawline","fillers"],["Skin boosters","Improves skin quality so treated areas look smooth.","Thin or crepey skin over hollows","skin"],["Neuromodulator for the jaw","Relaxes a strong jaw muscle to soften a wide lower face.","Jaw clenching and a square lower face","botox"]],
-guide:[["Your cheeks look flat or hollow","Cheek filler"],["You look tired even when rested","Temple or under-eye filler, if you’re a candidate"],["Your jawline has lost its edge","Chin and jawline filler"],["You’ve recently lost weight","A staged filler plan once your weight is stable"]],
-expect:["You’ll see filler results right away. They settle at about 2 weeks.","Cleo restores volume in stages, so your face stays in balance.","Filler can’t lift heavy, loose skin. If that’s your main concern, Cleo will tell you."],
-care:["Keep your weight stable after treatment","Protect your skin with daily sunscreen","Sleep on your back for the first few nights after filler","Book a review every 9 to 12 months"],
-faqs:[["Will I look overfilled?","Cleo plans filler around your whole face and often uses less than clients expect. She restores volume in stages and reviews your result at 2 weeks before adding more."],["How much filler will I need?","It depends on how much volume you’ve lost and where. Many clients need 1 to 3 syringes across one or two visits. Cleo gives you a clear plan at your free consultation."],["Does everyone lose facial volume?","Yes, everyone loses some volume with age. How much, and where, varies with genetics, skin and weight. Some people notice it in their 30s, others much later."],["Can I treat volume loss after weight loss medication?","Yes. Cleo usually recommends waiting until your weight is stable, so the result lasts and your face stays in proportion."]]},
-"Skin Hydration & Radiance":{
-h1:"Dull, Dry Skin Treatment in Oakville",line:"Hydration you can see, without changing your features.",img:"treatment-skin-boosters.webp",
-first:"Cleo R., a Nurse Practitioner, offers treatment for dull, dry skin in Oakville, from skin boosters to IV hydration, matched to what’s causing it.",
-causes:[["Less hyaluronic acid","Your skin holds less of its own hyaluronic acid as you age, so it holds less water."],["Winter and indoor heat","Ontario winters and indoor heating pull moisture from the skin for months at a time."],["Sun damage","UV light weakens the skin barrier, which lets water escape."],["Lifestyle","Short sleep, stress, alcohol and low water intake all show on the skin."]],
-options:[["Skin boosters","Light hyaluronic acid placed just under the skin for hydration and glow.","Dull, dry or crepey skin on the face, neck and hands","skin"],["IV hydration","Fluids and nutrients delivered directly, after a health screening.","Feeling run-down or dehydrated","iv"],["A skincare review","Cleo looks at what you use now and what to change.","Everyone, alongside treatment",null]],
-guide:[["Your skin looks flat and tired","Skin boosters"],["Your skin feels tight and flaky","A skincare review first, then boosters if needed"],["You feel run-down as well","IV hydration after screening"],["You have an event in a month","A skin booster session 2 to 4 weeks before"]],
-expect:["Skin often looks fresher within a few days.","Hydration builds across a series of 2 to 3 sessions.","Results last around 6 months with a maintenance session."],
-care:["Use a gentle cleanser and a hyaluronic acid serum","Run a humidifier through the winter","Wear SPF every day","Drink water steadily through the day"],
-faqs:[["What’s the difference between dry and dehydrated skin?","Dry skin lacks oil. Dehydrated skin lacks water. Any skin type can be dehydrated, including oily skin. Cleo checks which one you have before suggesting treatment."],["Are skin boosters better than a facial?","They do different jobs. Facials work on the surface. Skin boosters hydrate from within and last for months. Many clients use both."],["How soon before an event should I book?","Book 2 to 4 weeks before. That gives small bumps time to settle and lets the hydration build."],["Do skin boosters work on darker skin?","Yes. They don’t affect pigment. Cleo plans injections to limit bruising, which can leave a longer-lasting mark on deeper skin tones."]]},
-"Wellness & Weight Management":{
-h1:"Wellness & Weight Management in Oakville",line:"Support built on your health history.",img:"treatment-weight-loss.webp",
-first:"Cleo R., a Nurse Practitioner, offers medically supervised weight management in Oakville for adults who want support based on a full health assessment.",
-causes:[["Hormones and metabolism","Hormones affect hunger, fullness and how your body stores fat."],["Medications","Some medications change appetite or make weight harder to lose."],["Sleep and stress","Short sleep and long-term stress both raise appetite and cravings."],["Life stages","Menopause, recovery after pregnancy and ageing all change how your body responds."]],
-options:[["Medical weight loss program","A health assessment, a personalized plan and regular check-ins.","Adults who want medical supervision","weight"],["IV infusions","Hydration and nutrient support, after screening.","Support during a demanding period","iv"],["Fat dissolving","Treats a small pocket of fat under the chin once your weight is stable.","A double chin that stays after weight loss","fat"]],
-guide:[["You’ve tried diets without lasting change","A medical weight loss assessment"],["You have a health condition or take regular medication","An assessment first, sometimes with your family doctor"],["Your weight is stable but a double chin remains","Fat dissolving injections"],["You feel run-down","IV hydration after screening"]],
-expect:["Progress is gradual, and Cleo tracks it at each check-in.","Your plan changes as your body responds.","If the program isn’t right for you, Cleo will tell you why."],
-care:["Keep a regular sleep schedule","Include protein at each meal to protect muscle","Add strength training twice a week","Bring your questions to every check-in"],
-faqs:[["Do I need a referral?","No. You can book a free consultation directly. If your health history calls for it, Cleo may coordinate with your family doctor."],["Is this a diet program?","No. It’s medical care. Your plan starts with a health assessment, and Cleo monitors your progress and side effects at regular check-ins."],["What happens at the first appointment?","Cleo reviews your health history, medications and goals, and may ask for recent bloodwork. You’ll leave knowing whether the program suits you."],["How long until I see results?","Most clients see gradual change over the first few months. Cleo sets a safe pace with you, based on your health."]]}
+"Under-Eye Hollows & Tired Eyes": {
+"h1": "Under-Eye Hollows & Tired Eyes Treatment in Oakville",
+"line": "Look as rested as you feel.",
+"img": "treatment-fillers.webp",
+"first": "Cleo R., a Nurse Practitioner, assesses dark, hollow or shadowed eyes in Oakville and tells you honestly whether treatment will help, and which option suits the cause.",
+"causes": [
+[
+"Volume loss",
+"The fat under the eye thins and shifts with age, leaving a hollow along the lower lid."
+],
+[
+"Thin skin",
+"Skin under the eye is very thin, so blood vessels and shadows show through."
+],
+[
+"Genetics",
+"Some people have a deep tear-trough groove or dark circles from their teens."
+],
+[
+"Lifestyle",
+"Poor sleep, dehydration and allergies can all make the area look darker and puffier."
+]
+],
+"options": [
+[
+"Dermal filler",
+"A small amount softens a hollow along the lower lid.",
+"Hollows and a deep groove, in suitable candidates",
+"fillers"
+],
+[
+"Skin boosters",
+"Hydrate the skin to improve fine lines and a crepey texture.",
+"Thin, dry, crepey skin under the eyes",
+"skin"
+],
+[
+"Neuromodulator injections",
+"Soften fine lines at the outer corners of the eyes.",
+"Crow’s feet that add to a tired look",
+"botox"
+]
+],
+"guide": [
+[
+"You have a hollow groove under your eyes",
+"Dermal filler, if your anatomy suits it"
+],
+[
+"Your under-eye skin looks thin or crepey",
+"Skin boosters"
+],
+[
+"The darkness comes from pigment or puffiness",
+"An assessment first, since filler won’t fix these"
+],
+[
+"Fine lines at the outer corners of your eyes",
+"A low-dose neuromodulator"
+]
+],
+"expect": [
+"Cleo only treats this area if you’re a good candidate. Some people are better off without it.",
+"Filler results show straight away and settle over about 2 weeks.",
+"Filler can’t remove dark pigment or true puffiness, and Cleo will say so.",
+"Results are subtle and last for months, not years."
+],
+"care": [
+"Wear SPF 30 or higher and sunglasses outdoors",
+"Moisturize with a gentle eye cream morning and night",
+"Keep your sleep, hydration and allergies in check",
+"Avoid rubbing the area"
+],
+"faqs": [
+[
+"What causes dark circles and hollows under the eyes?",
+"Common causes are volume loss, thin skin that shows blood vessels, genetics, and lifestyle factors such as poor sleep or allergies. Cleo works out which applies to you, because the right option depends on the cause."
+],
+[
+"Is under-eye filler safe?",
+"The under-eye area is delicate, so it needs an experienced injector and careful candidate selection. Cleo explains the risks at your free consultation and will tell you if you’re not a good fit."
+],
+[
+"How long do results last?",
+"Filler in this area can last several months to a year or longer, depending on your anatomy and the product. Cleo gives you a realistic range for your case."
+],
+[
+"Will filler fix my dark circles?",
+"Only if the darkness is a shadow from a hollow. Dark circles caused by pigment, thin skin or puffiness need a different approach, and Cleo will tell you honestly."
+]
+]
+},
+"Jaw Clenching & Teeth Grinding": {
+"h1": "Jaw Clenching & Teeth Grinding Treatment in Oakville",
+"line": "Less tension in the jaw, a softer lower face.",
+"img": "treatment-botox.webp",
+"first": "Cleo R., a Nurse Practitioner, offers neuromodulator treatment in Oakville for jaw clenching and teeth grinding, with a plan built around how strong your jaw muscles are.",
+"causes": [
+[
+"Stress",
+"Many people clench or grind without noticing, especially under stress or while asleep."
+],
+[
+"Overactive jaw muscles",
+"The masseter muscle can become large and tight from constant use."
+],
+[
+"Bite and teeth",
+"An uneven bite or missing teeth can add to grinding. Your dentist can check this."
+],
+[
+"Sleep",
+"Grinding is often linked to poor sleep, so it’s worth raising with your doctor."
+]
+],
+"options": [
+[
+"Neuromodulator injections",
+"Relaxes the masseter muscle so it clenches with less force.",
+"Tight, enlarged jaw muscles and jaw tension",
+"botox"
+],
+[
+"Dermal filler",
+"Adds definition to the chin and jawline if your lower face looks wide or soft.",
+"Balancing a lower face after muscle relaxation",
+"fillers"
+]
+],
+"guide": [
+[
+"Your jaw aches or you wake with headaches",
+"A neuromodulator plan, after speaking to your dentist or doctor"
+],
+[
+"Your lower face looks square or wide",
+"Neuromodulator for the masseter"
+],
+[
+"You want a more defined jawline",
+"Filler, sometimes with a neuromodulator"
+],
+[
+"You’re not sure you grind",
+"An assessment of your jaw and your history first"
+]
+],
+"expect": [
+"Results build over 2 to 4 weeks as the muscle relaxes.",
+"Most people notice less tension and a slimmer lower face in time.",
+"Treatment lasts about 3 to 4 months, then the muscle recovers.",
+"It doesn’t cure the cause, so a night guard from your dentist may still help."
+],
+"care": [
+"Ask your dentist about a night guard",
+"Avoid chewing gum and very hard foods",
+"Try jaw stretches and ways to lower daily stress",
+"Book a review at about 2 weeks"
+],
+"faqs": [
+[
+"Can Botox help with jaw clenching?",
+"Neuromodulators relax the masseter muscle, which reduces the force of clenching and can ease jaw tension and headaches linked to it. Cleo reviews your history first, since a dentist or doctor should look at the cause."
+],
+[
+"Will it change the shape of my face?",
+"Over several weeks an overactive masseter can shrink slightly, which softens a square lower face. Cleo uses careful doses so your smile and chewing stay natural."
+],
+[
+"How often will I need treatment?",
+"Most people repeat treatment every 3 to 4 months at first. Some need it less often as the habit eases."
+],
+[
+"Does it replace a night guard?",
+"No. Treatment reduces muscle strength, but it doesn’t stop the habit. Your dentist can advise whether a night guard is also right for you."
+]
+]
+},
+"Smile Lines & Marionette Lines": {
+"h1": "Smile Lines & Marionette Lines Treatment in Oakville",
+"line": "Soften the folds, keep your expression.",
+"img": "treatment-fillers-woman.webp",
+"first": "Cleo R., a Nurse Practitioner, treats smile lines and marionette lines in Oakville by looking at the whole face, because these folds usually come from lost support higher up.",
+"causes": [
+[
+"Cheek volume loss",
+"As the cheeks lose support, skin drops toward the mouth and deepens the fold from nose to mouth."
+],
+[
+"Collagen loss",
+"Skin makes less collagen with age, so folds stay when your face is still."
+],
+[
+"Facial movement",
+"Years of smiling and talking crease the same lines."
+],
+[
+"Bone and fat changes",
+"Slow shifts in the bone and fat pads change how the lower face sits."
+]
+],
+"options": [
+[
+"Dermal filler",
+"Restores support in the cheeks and softens the folds below.",
+"Deeper folds that stay at rest",
+"fillers"
+],
+[
+"Skin boosters",
+"Improve skin quality so fine lines around the mouth look smoother.",
+"Fine, crepey lines around the mouth",
+"skin"
+],
+[
+"Neuromodulator injections",
+"Soften the muscle pull that adds to lines around the mouth and chin.",
+"Downturned mouth corners and chin dimpling",
+"botox"
+]
+],
+"guide": [
+[
+"The fold from your nose to your mouth looks deep",
+"Cheek support, then filler for the fold if needed"
+],
+[
+"Lines run from the corners of your mouth to your chin",
+"Filler, sometimes with a neuromodulator"
+],
+[
+"Your skin looks crepey around the mouth",
+"Skin boosters"
+],
+[
+"Your mouth corners turn down",
+"A neuromodulator plan, if suitable"
+]
+],
+"expect": [
+"Cleo often treats the cheeks first, since that can soften the fold without filling it directly.",
+"You’ll see filler results right away. They settle at about 2 weeks.",
+"Deep folds improve but don’t disappear. The aim is a softer look, not a smooth one.",
+"Cleo adds filler in stages so your face stays in proportion."
+],
+"care": [
+"Wear SPF 30 or higher every day",
+"Moisturize morning and night",
+"Avoid smoking, which speeds up collagen loss",
+"Book a review at 2 weeks and every 9 to 12 months"
+],
+"faqs": [
+[
+"What’s the difference between smile lines and marionette lines?",
+"Smile lines (nasolabial folds) run from the sides of the nose to the corners of the mouth. Marionette lines run from the mouth corners down toward the chin. Both can be softened, but they often need different plans."
+],
+[
+"Is filler the only option?",
+"No. Skin boosters help fine lines and texture, and a neuromodulator can ease muscle pull around the mouth. Filler works best for deeper folds that stay at rest."
+],
+[
+"Will filler make my face look heavy?",
+"Cleo plans around your whole face and often treats the cheeks first, so you need less filler in the fold itself. She adds in stages and reviews your result at 2 weeks."
+],
+[
+"How long do results last?",
+"Many fillers last 9 to 18 months, depending on the product and the area. Cleo gives you a realistic range at your free consultation."
+]
+]
+}
 };

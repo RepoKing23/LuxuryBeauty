@@ -4,6 +4,7 @@
 const __ds_ns = (window.LuxuryBeautyByCleoRDesignSystem_8fa9a4 = window.LuxuryBeautyByCleoRDesignSystem_8fa9a4 || {});
 
 const __ds_scope = {};
+const LB_H = (l, i) => (window.LB_hrefFor ? window.LB_hrefFor(l, i) : "#");
 
 (__ds_ns.__errors = __ds_ns.__errors || []);
 
@@ -13,6 +14,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function ConcernList({
   concerns = [],
   onSelect,
+  hrefFor,
   style
 }) {
   return /*#__PURE__*/React.createElement("div", {
@@ -23,6 +25,7 @@ function ConcernList({
   }, concerns.map((c, k) => /*#__PURE__*/React.createElement(Row, _extends({
     key: k
   }, c, {
+    href: hrefFor ? hrefFor(c) : c.href,
     onClick: onSelect ? e => {
       e.preventDefault();
       onSelect(c);
@@ -350,7 +353,7 @@ Object.assign(__ds_scope, { Button });
 // components/core/Logo.jsx
 try { (() => {
 function Logo({
-  src = "assets/logo-icon.png",
+  src = "/assets/logo-icon-w256.webp",
   href = "#",
   compact = false,
   style
@@ -378,7 +381,10 @@ function Logo({
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: src,
-    alt: "",
+    alt: "Luxury Beauty by Cleo R. logo",
+    width: 256,
+    height: 256,
+    decoding: "async",
     style: {
       width: "100%",
       height: "100%",
@@ -460,7 +466,7 @@ function TreatmentCard({
   name,
   summary,
   image,
-  imageAlt = "",
+  imageAlt,
   href = "#",
   onClick,
   style
@@ -490,7 +496,9 @@ function TreatmentCard({
     }
   }, image && /*#__PURE__*/React.createElement("img", {
     src: image,
-    alt: imageAlt,
+    alt: imageAlt || name + " in Oakville",
+    loading: "lazy",
+    decoding: "async",
     style: {
       position: "absolute",
       inset: 0,
@@ -637,6 +645,8 @@ function BookingCta({
   }, image && /*#__PURE__*/React.createElement("img", {
     src: image,
     alt: "",
+    loading: "lazy",
+    decoding: "async",
     style: {
       position: "absolute",
       inset: 0,
@@ -741,6 +751,7 @@ const col = {
   fontSize: 14
 };
 const MAP_EMBED = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.536621236177!2d-79.73647509999999!3d43.47558569999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b5d02bab7dd91%3A0xd1e4c7aa4bbefca2!2sLuxury%20Beauty%20By%20Cleo%20R!5e0!3m2!1sen!2sca!4v1789959453969!5m2!1sen!2sca";
+const GBP_LINK = "https://maps.google.com/?cid=15124432982846143650";
 const MAP_LINK = "https://maps.app.goo.gl/8nuEqr8YRCzXv4A5A";
 const SOCIALS = [{
   name: "Instagram",
@@ -842,7 +853,8 @@ function SiteFooter({
   const A = ({
     children,
     label,
-    href = "#",
+    item,
+    href = label ? LB_H(label, item) : "#",
     target
   }) => {
     const [h, setH] = React.useState(false);
@@ -852,7 +864,7 @@ function SiteFooter({
       rel: target ? "noreferrer" : undefined,
       onClick: label && onNavigate ? e => {
         e.preventDefault();
-        onNavigate(label);
+        onNavigate(label, item);
       } : undefined,
       onMouseEnter: () => setH(true),
       onMouseLeave: () => setH(false),
@@ -880,7 +892,7 @@ function SiteFooter({
     }
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(__ds_scope.Logo, {
     src: logoSrc,
-    href: "#"
+    href: "/"
   }), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 28,
@@ -895,7 +907,7 @@ function SiteFooter({
       gap: 10,
       marginTop: 28
     }
-  }, socials.map(s => /*#__PURE__*/React.createElement(Social, {
+  }, socials.filter(s => s.href && s.href !== "#").map(s => /*#__PURE__*/React.createElement(Social, {
     key: s.name,
     s: s
   }))), map && /*#__PURE__*/React.createElement("div", {
@@ -943,14 +955,16 @@ function SiteFooter({
   }, "About Cleo"), /*#__PURE__*/React.createElement(A, {
     label: "Before & After"
   }, "Before & After"), /*#__PURE__*/React.createElement(A, {
-    label: "The Cleo Difference"
-  }, "The Cleo Difference"), /*#__PURE__*/React.createElement(A, {
-    label: "Inclusive care"
-  }, "Inclusive care"), /*#__PURE__*/React.createElement(A, {
     label: "New Here?"
   }, "Your first visit"), /*#__PURE__*/React.createElement(A, {
     label: "FAQs"
-  }, "FAQs")), /*#__PURE__*/React.createElement("div", {
+  }, "FAQs"), /*#__PURE__*/React.createElement(A, {
+    label: "Locations"
+  }, "Locations"), ["burlington", "milton", "mississauga"].map(k => /*#__PURE__*/React.createElement(A, {
+    key: k,
+    label: "area",
+    item: k
+  }, "Med spa " + k.charAt(0).toUpperCase() + k.slice(1)))), /*#__PURE__*/React.createElement("div", {
     style: col
   }, /*#__PURE__*/React.createElement(Label, null, "Treatments"), treatments.map(t => /*#__PURE__*/React.createElement(A, {
     key: t,
@@ -964,7 +978,12 @@ function SiteFooter({
     target: "_blank"
   }, "3060 Preserve Dr,", /*#__PURE__*/React.createElement("br", null), "Oakville, ON L6M 4L9, CA"), /*#__PURE__*/React.createElement(A, {
     href: "tel:+14162940452"
-  }, "416-294-0452"), /*#__PURE__*/React.createElement(A, null, "YouTube interviews"), /*#__PURE__*/React.createElement(A, null, "Google reviews"))), /*#__PURE__*/React.createElement("div", {
+  }, "416-294-0452"), /*#__PURE__*/React.createElement(A, {
+    href: "/about#video-highlights"
+  }, "YouTube interviews"), /*#__PURE__*/React.createElement(A, {
+    href: GBP_LINK,
+    target: "_blank"
+  }, "Google reviews"))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       justifyContent: "space-between",
@@ -991,11 +1010,12 @@ Object.assign(__ds_scope, { SiteFooter });
 
 // components/layout/SiteHeader.jsx
 try { (() => {
-const NAV = ["About", "Treatments", "Concerns", "Before & After", "The Cleo Difference", "New Here?", "FAQs"];
+const NAV = ["About", "Treatments", "Concerns", "Before & After", "New Here?", "FAQs"];
 function useWidth() {
-  const [w, setW] = React.useState(typeof window !== "undefined" ? window.innerWidth : 1440);
+  const [w, setW] = React.useState(1440);
   React.useEffect(() => {
     const f = () => setW(window.innerWidth);
+    f();
     window.addEventListener("resize", f);
     return () => window.removeEventListener("resize", f);
   }, []);
@@ -1084,7 +1104,7 @@ function SiteHeader({
     }
   }, /*#__PURE__*/React.createElement(__ds_scope.Logo, {
     src: logoSrc,
-    href: "#",
+    href: "/",
     compact: w <= 520
   })), !collapsed && /*#__PURE__*/React.createElement("nav", {
     "aria-label": "Primary navigation",
@@ -1101,13 +1121,14 @@ function SiteHeader({
     hasMenu: !!(menus && menus[l]),
     expanded: mega === l,
     onEnter: () => show(l),
+    href: LB_H(l),
     onClick: go(l)
   }))), !mobile && /*#__PURE__*/React.createElement("span", {
     onMouseEnter: hide
   }, /*#__PURE__*/React.createElement(__ds_scope.Button, {
     variant: "brand",
     size: "cta-sm",
-    href: "#",
+    href: LB_H("Book a consultation"),
     onClick: go("Book a consultation")
   }, "Book a consultation")), collapsed && /*#__PURE__*/React.createElement("button", {
     type: "button",
@@ -1151,7 +1172,7 @@ function SiteHeader({
     }
   }, [...nav, "Book a consultation"].map(l => /*#__PURE__*/React.createElement("a", {
     key: l,
-    href: "#",
+    href: LB_H(l),
     onClick: go(l),
     style: {
       display: "block",
@@ -1217,10 +1238,11 @@ function MegaPanel({
   }, c.items.map(it => /*#__PURE__*/React.createElement(MegaItem, {
     key: it.label,
     it: it,
+    href: LB_H(it.to || it.label, it),
     onClick: go(it.to || it.label, it),
     onHover: () => setImg(it.image || null)
   }))), c.all && /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: LB_H(c.all.to || c.all.label, c.all),
     onClick: go(c.all.to || c.all.label, c.all),
     style: {
       marginTop: 18,
@@ -1236,7 +1258,7 @@ function MegaPanel({
   }, c.all.label, " ", /*#__PURE__*/React.createElement("span", {
     "aria-hidden": true
   }, "\u2197")))), f && /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: LB_H(f.to || "Book a consultation", f),
     onClick: go(f.to || "Book a consultation", f),
     style: {
       display: "flex",
@@ -1255,6 +1277,7 @@ function MegaPanel({
   }, /*#__PURE__*/React.createElement("img", {
     src: img || f.image,
     alt: "",
+    loading: "lazy",
     style: {
       position: "absolute",
       inset: 0,
@@ -1293,12 +1316,13 @@ function MegaPanel({
 }
 function MegaItem({
   it,
+  href = "#",
   onClick,
   onHover
 }) {
   const [h, setH] = React.useState(false);
   return /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: href,
     onClick: onClick,
     onMouseEnter: () => {
       setH(true);
@@ -1349,12 +1373,13 @@ function NavLink({
   hasMenu,
   expanded,
   onEnter,
+  href = "#",
   onClick
 }) {
   const [h, setH] = React.useState(false);
   const lit = h || expanded;
   return /*#__PURE__*/React.createElement("a", {
-    href: "#",
+    href: href,
     onClick: onClick,
     onMouseEnter: () => {
       setH(true);

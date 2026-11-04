@@ -43,6 +43,16 @@ for (const f of fs.readdirSync(path.join(ROOT, 'js'))) if (/^app\.[0-9a-f]{10}\.
 const jsName = `app.${hash}.js`;
 fs.writeFileSync(path.join(ROOT, 'js', jsName), js);
 
+// ---- CSS: self-hosted fonts + tokens + base, minified, hashed ----
+const {transform} = await import('esbuild');
+const strip = t => t.replace(/@import[^;]*;/g, '');
+const rawCss = ['fonts.css', 'tokens/colors.css', 'tokens/typography.css', 'tokens/spacing.css', 'tokens/base.css', 'base.css'].map(f => strip(read(f))).join('\n');
+const cssOut = (await transform(rawCss, {loader: 'css', minify: true})).code;
+const cssHash = crypto.createHash('sha1').update(cssOut).digest('hex').slice(0, 10);
+for (const f of fs.readdirSync(ROOT)) if (/^styles\.[0-9a-f]{10}\.css$/.test(f)) fs.unlinkSync(path.join(ROOT, f));
+const cssName = `styles.${cssHash}.css`;
+fs.writeFileSync(path.join(ROOT, cssName), cssOut);
+
 // ---- server bundle (prerender) ----
 const serverEntry = `
 import React from 'react';
@@ -76,12 +86,14 @@ const lb = globalThis.__lb;
 // ---- HTML shell ----
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 const SITE = window.LB_SITE;
-const FONTS = 'https://fonts.googleapis.com/css2?family=Bellefair&family=Inter:wght@300..700&family=Mrs+Saint+Delafield&display=swap';
-const css = fs.existsSync(path.join(ROOT, 'src/site.css')) ? '' : '';
+
 function page(r) {
   const m = lb.meta(r.page, r.key);
   const html = lb.render(m.path);
   const og = r.page === 'Home' ? 'website' : 'article';
+  const hero = html.match(/<img[^>]*loading="eager"[^>]*>/);
+  const heroSrc = hero && (hero[0].match(/src="([^"]+)"/) || [])[1];
+  const heroPreload = heroSrc ? `<link rel="preload" as="image" href="${heroSrc}" fetchpriority="high">` : '';
   const head = [
     '<meta charset="utf-8">',
     '<meta name="viewport" content="width=device-width, initial-scale=1">',
@@ -101,11 +113,11 @@ function page(r) {
     `<meta name="twitter:description" content="${esc(m.desc)}">`,
     `<meta name="twitter:image" content="${SITE.url}${SITE.image}">`,
     '<meta name="google-site-verification" content="YRgNkUO9V9HT7ugG-mby_EjH4SFpdBaLlNuj4dc9TCo">',
-    '<link rel="icon" type="image/png" href="/assets/logo-icon.png">',
-    '<link rel="preconnect" href="https://fonts.googleapis.com">',
-    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-    `<link rel="stylesheet" href="${FONTS}">`,
-    '<link rel="stylesheet" href="/styles.css">',
+    '<link rel="icon" type="image/png" href="/assets/favicon-64.png">',
+    '<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>',
+    '<link rel="preload" href="/assets/fonts/bellefair-latin.woff2" as="font" type="font/woff2" crossorigin>',
+    heroPreload,
+    `<link rel="stylesheet" href="/${cssName}">`,
     m.schema ? `<script type="application/ld+json" id="lb-schema">${JSON.stringify(m.schema).replace(/</g, '\\u003c')}</script>` : '',
     `<script defer src="/js/${jsName}"></script>`,
   ].filter(Boolean).join('\n');
