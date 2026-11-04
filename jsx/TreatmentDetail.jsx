@@ -19,7 +19,7 @@ return <main>
 <div style={{display:"flex",flexWrap:"wrap",gap:14,marginBottom:30}}><Button arrow onClick={()=>go("Book a consultation")}>Book a free consultation</Button><Button variant="brandOutline" href="tel:+14162940452">Call 416-294-0452</Button></div>
 <p style={{marginTop:"auto",fontSize:11,color:"var(--brand-muted)"}}>Medically reviewed by Cleo R., NP · Updated November 2026</p>
 </div>
-{t.slug==="lips"?<div style={{minHeight:620,display:"grid",placeItems:"center",background:"repeating-linear-gradient(135deg,var(--surface) 0 10px,var(--surface-soft) 10px 11px)",fontFamily:"ui-monospace,Menlo,monospace",fontSize:11,color:"var(--brand-muted)"}}>lip filler photo (client consent required)</div>:<Img src={t.image} style={{minHeight:620}}/>}
+<Img src={t.image} style={{minHeight:620}}/>
 </section>
 <section aria-label="Quick facts" style={{borderBottom:"1px solid var(--border)",padding:"0 max(6vw,32px)"}}><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,160px),1fr))",borderLeft:"1px solid var(--border)"}}>{[...X.facts,["Consultation","Free"]].map(([l,v])=><div key={l} style={{background:"var(--background)",borderRight:"1px solid var(--border)",borderTop:"1px solid var(--border)",marginTop:-1,padding:"28px 24px",display:"flex",flexDirection:"column",gap:8}}><span style={cap}>{l}</span><span style={{fontFamily:"var(--font-display)",fontSize:22,lineHeight:1.2}}>{v}</span></div>)}</div></section>
 <section style={{...SP,display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,380px),1fr))",gap:"4vw 9vw"}}>

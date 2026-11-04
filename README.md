@@ -1,49 +1,54 @@
 # Luxury Beauty by Cleo R. — static site (https://luxurybeautyaesthetic.com)
 
-Plain static site. No vercel.json and no build step needed: every page has its own folder with an index.html, which Vercel serves automatically.
+Plain static site. No vercel.json and no build step: every page has its own folder with an index.html, which Vercel serves automatically.
 
 ## Deploy to Vercel
-1. Put the CONTENTS of this folder at the root of your GitHub repo (index.html, js/, jsx/, assets/, treatments/, concerns/ … at top level). Delete any old vercel.json / now.json from the repo.
+1. Put the CONTENTS of this folder at the root of your GitHub repo. Delete any old vercel.json / now.json.
 2. Vercel → Add New → Project → import the repo.
 3. Framework Preset: Other. Build Command, Output Directory, Root Directory: empty.
 4. Deploy, then add luxurybeautyaesthetic.com under Settings → Domains.
 
-## Pages
-Each URL has its own HTML file with its title, description, canonical, robots and Open Graph tags baked in (Google and link previews read them without JavaScript):
-- index.html
-- treatments/index.html
-- concerns/index.html
-- about/index.html
-- cleo-difference/index.html
-- your-visit/index.html
-- faq/index.html
-- inclusive-care/index.html
-- before-after/index.html
-- contact/index.html
-- policies/index.html
-- privacy/index.html
-- thank-you/index.html
+## Pages (29, each with its own title/description/canonical/robots/Open Graph baked in)
+- /
+- /treatments
+- /concerns
+- /about
+- /cleo-difference
+- /your-visit
+- /faq
+- /inclusive-care
+- /before-after
+- /contact
+- /locations (schema)
+- /policies
+- /privacy
+- /thank-you
 - 404.html
-- treatments/botox-neurotoxins/index.html
-- treatments/dermal-fillers/index.html
-- treatments/lip-filler/index.html
-- treatments/fat-dissolving/index.html
-- treatments/weight-loss/index.html
-- treatments/skin-boosters/index.html
-- treatments/iv-infusions/index.html
-- concerns/fine-lines-wrinkles/index.html
-- concerns/facial-volume-definition/index.html
-- concerns/skin-hydration-radiance/index.html
-- concerns/wellness-weight-management/index.html
-- concerns/lips/index.html → redirects to /treatments/lip-filler
+- /treatments/botox-neurotoxins
+- /treatments/dermal-fillers
+- /treatments/lip-filler
+- /treatments/fat-dissolving
+- /treatments/weight-loss
+- /treatments/skin-boosters
+- /treatments/iv-infusions
+- /concerns/fine-lines-wrinkles
+- /concerns/facial-volume-definition
+- /concerns/skin-hydration-radiance
+- /concerns/wellness-weight-management
+- /med-spa-burlington (schema)
+- /med-spa-milton (schema)
+- /med-spa-mississauga (schema)
+- /concerns/lips → redirects to /treatments/lip-filler
+
+## Location pages (local SEO)
+- /locations: hub. Schema: MedicalBusiness (areaServed Oakville, Burlington, Milton, Mississauga), CollectionPage + ItemList + BreadcrumbList, FAQPage.
+- /med-spa-burlington, /med-spa-milton, /med-spa-mississauga. Schema: MedicalBusiness (areaServed Oakville + city), WebPage + BreadcrumbList, FAQPage.
+- Content lives in js/areaContent.js; titles/descriptions in js/seoMeta.js.
+- Validate after deploy: https://search.google.com/test/rich-results
 
 ## SEO
-- sitemap.xml lists the indexable pages; robots.txt points to it.
-- Noindex (meta robots, excluded from sitemap): /policies, /privacy, /thank-you, 404.html.
-- Google Search Console verification tag kept from the live site.
-
-## Structure
-- js/ds-bundle.js: design-system components · js/*.js: content, SEO meta, animations · jsx/: page components · styles.css + tokens/: design tokens · assets/: logo + photos
+- sitemap.xml: 25 indexable URLs; robots.txt points to it.
+- Noindex: /policies, /privacy, /thank-you, 404.html.
 
 ## Run locally
 `npx serve .`
