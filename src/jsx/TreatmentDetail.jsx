@@ -55,6 +55,7 @@ return <main>
 <ul style={{listStyle:"none",margin:0,padding:0,borderTop:"1px solid var(--rule-strong)",maxWidth:520}}>{["Assessed by a Nurse Practitioner, every visit","RN since 2013 · NP since 2022","Care planned for every skin tone and face","Honest advice, including “not today”"].map(i=><li key={i} style={{padding:"14px 0",borderBottom:"1px solid var(--rule-strong)",fontFamily:"var(--font-display)",fontSize:22}}>{i}</li>)}</ul>
 <p style={{marginTop:24,fontSize:12,color:"var(--brand-muted)"}}><a {...go.link("About")} style={{color:"inherit"}}>Meet Cleo</a></p>
 </div></section>
+{(window.LB_TX_DEEP[t.slug]||[]).length>0&&<section style={{...SP,background:"var(--surface)"}}><div style={{maxWidth:900,margin:"0 auto",display:"grid",gap:56}}>{window.LB_TX_DEEP[t.slug].map(([h,ps])=><article key={h}><h2 style={H("clamp(36px,4vw,56px)",{marginBottom:24})}>{h}</h2><div style={{display:"grid",gap:18,maxWidth:760}}>{ps.map(x=><p key={x}>{x}</p>)}</div></article>)}</div></section>}
 <section style={{...SP,display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,340px),1fr))",gap:"4vw 9vw"}}>
 <div><h2 style={H("clamp(48px,5.4vw,78px)",{marginBottom:24})}>{t.slug==="lips"?"Lip filler":t.name.replace(" Treatments","")} FAQs</h2><p style={{maxWidth:380,marginBottom:20}}>Still unsure? Ask Cleo at your free consultation.</p><a {...go.link("FAQs")} style={{fontSize:10,letterSpacing:"0.14em",textTransform:"uppercase",color:"inherit"}}>All FAQs ↗</a></div>
 <FaqList faqs={X.faqs}/>

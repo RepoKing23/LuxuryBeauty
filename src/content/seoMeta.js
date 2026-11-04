@@ -37,9 +37,9 @@ concerns:{
 const slugify=s=>s.toLowerCase().replace(/&/g," ").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 window.LB_getMeta=(page,key)=>{const M=window.LB_META;let m;
 if(page==="area"){const A=(window.LB_AREAS||{})[key]||{};m={path:A.path||"/med-spa-"+key,...(M.areas[key]||{}),schema:window.LB_areaSchema&&window.LB_areaSchema(key)};}
-else if(page==="treatment"){const t=M.treatments[key]||{};m={path:"/treatments/"+key,...t};}
-else if(page==="concern"){const c=M.concerns[key]||{title:key+" Treatment in Oakville | Luxury Beauty",desc:key+" treatment in Oakville by Cleo R., Nurse Practitioner. Options matched to your goals, starting with a free consultation."};m={...c,path:"/concerns/"+(c.slug||slugify(key))};}
-else m=M.pages[page]||M.pages.Home;
+else if(page==="treatment"){const t=M.treatments[key]||{};m={path:"/treatments/"+key,...t,schema:window.LB_treatmentSchema&&window.LB_treatmentSchema(key)};}
+else if(page==="concern"){const c=M.concerns[key]||{title:key+" Treatment in Oakville | Luxury Beauty",desc:key+" treatment in Oakville by Cleo R., Nurse Practitioner. Options matched to your goals, starting with a free consultation."};m={...c,path:"/concerns/"+(c.slug||slugify(key)),schema:window.LB_concernSchema&&window.LB_concernSchema(key)};}
+else{m=M.pages[page]||M.pages.Home;if(page==="Home"&&window.LB_homeSchema)m={...m,schema:window.LB_homeSchema()};else if(window.LB_pageSchema&&page!=="Locations"){const sc=window.LB_pageSchema(page,{Treatments:"Treatments",Concerns:"Concerns",About:"About",Visit:"Your visit",Faq:"FAQs",BeforeAfter:"Before & After",Contact:"Contact"}[page]);if(sc)m={...m,schema:sc}}}
 if(page==="Locations"&&window.LB_hubSchema)m={...m,schema:window.LB_hubSchema()};
 return {robots:IDX,...m,canonical:window.LB_SITE.url+(m.path==="/"?"/":m.path)}};
 window.LB_routeToPath=r=>window.LB_getMeta(r.page,r.key).path;
@@ -55,7 +55,8 @@ let c=h.querySelector('link[rel="canonical"]');if(!c){c=document.createElement("
 set("property","og:locale","en_CA");set("property","og:type",page==="Home"?"website":"article");set("property","og:title",m.title);set("property","og:description",m.desc);set("property","og:url",m.canonical);set("property","og:site_name",S.name);set("property","og:image",S.url+S.image);
 set("name","twitter:card","summary_large_image");set("name","twitter:title",m.title);set("name","twitter:description",m.desc);set("name","twitter:image",S.url+S.image);let ld=document.getElementById("lb-schema");if(m.schema){if(!ld){ld=document.createElement("script");ld.type="application/ld+json";ld.id="lb-schema";h.appendChild(ld)}ld.textContent=JSON.stringify(m.schema)}else if(ld)ld.remove();return m};
 
-window.LB_business=cities=>{const S=window.LB_SITE;return {"@type":"MedicalBusiness","@id":S.url+"/#business","name":S.name,"url":S.url,"telephone":"+1-416-294-0452","image":S.url+S.image,"priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"3060 Preserve Dr","addressLocality":"Oakville","addressRegion":"ON","postalCode":"L6M 4L9","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":43.4755857,"longitude":-79.7364751},"hasMap":"https://maps.app.goo.gl/8nuEqr8YRCzXv4A5A","sameAs":["https://www.instagram.com/luxury_beauty_aestheticz/"],"areaServed":cities.map(c=>({"@type":"City","name":c})),"founder":{"@type":"Person","name":"Cleo R.","jobTitle":"Board-Certified Nurse Practitioner"}}};
+window.LB_ALL_CITIES=()=>["Oakville",...Object.values(window.LB_AREAS||{}).map(a=>a.city)];
+window.LB_business=cities=>{const S=window.LB_SITE;cities=window.LB_ALL_CITIES();return {"@type":"MedicalBusiness","@id":S.url+"/#business","name":S.name,"url":S.url,"telephone":"+1-416-294-0452","image":S.url+S.image,"priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"3060 Preserve Dr","addressLocality":"Oakville","addressRegion":"ON","postalCode":"L6M 4L9","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":43.4755857,"longitude":-79.7364751},"hasMap":"https://maps.app.goo.gl/8nuEqr8YRCzXv4A5A","sameAs":["https://www.instagram.com/luxury_beauty_aestheticz/","https://maps.google.com/?cid=15124432982846143650"],"areaServed":cities.map(c=>({"@type":"City","name":c})),"founder":{"@type":"Person","name":"Cleo R.","jobTitle":"Board-Certified Nurse Practitioner"}}};
 window.LB_hubSchema=()=>{const S=window.LB_SITE,url=S.url+"/locations",A=Object.values(window.LB_AREAS||{});
 return {"@context":"https://schema.org","@graph":[window.LB_business(["Oakville",...A.map(a=>a.city)]),
 {"@type":"CollectionPage","@id":url,"url":url,"name":window.LB_META.pages.Locations.title,"about":{"@id":S.url+"/#business"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":S.url+"/"},{"@type":"ListItem","position":2,"name":"Locations","item":url}]},
@@ -66,3 +67,21 @@ return {"@context":"https://schema.org","@graph":[window.LB_business(["Oakville"
 {"@type":"WebPage","@id":url,"url":url,"name":window.LB_META.areas[key].title,"about":{"@id":S.url+"/#business"},
 "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":S.url+"/"},{"@type":"ListItem","position":2,"name":"Locations","item":S.url+"/locations"},{"@type":"ListItem","position":3,"name":"Med Spa "+A.city,"item":url}]}},
 {"@type":"FAQPage","mainEntity":A.faqs.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))}]}};
+
+const crumbs=(S,items)=>({"@type":"BreadcrumbList","itemListElement":items.map(([n,u],i)=>({"@type":"ListItem","position":i+1,"name":n,"item":S.url+u}))});
+const faqLd=f=>({"@type":"FAQPage","mainEntity":(f||[]).map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))});
+window.LB_treatmentSchema=slug=>{const T=window.LB_DATA.treatments.find(t=>t.slug===slug),X=window.LB_TX[slug],M=window.LB_META.treatments[slug];if(!T||!X)return null;
+const S=window.LB_SITE,url=S.url+"/treatments/"+slug;
+return {"@context":"https://schema.org","@graph":[window.LB_business(),
+{"@type":"WebPage","@id":url,"url":url,"name":M.title,"description":M.desc,"about":{"@id":url+"#service"},"isPartOf":{"@id":S.url+"/#website"},"breadcrumb":crumbs(S,[["Home","/"],["Treatments","/treatments"],[T.name,"/treatments/"+slug]])},
+{"@type":["Service","MedicalProcedure"],"@id":url+"#service","name":T.seoHeading,"serviceType":T.name,"description":M.desc,"url":url,"image":S.url+T.image,"provider":{"@id":S.url+"/#business"},"areaServed":window.LB_ALL_CITIES().map(c=>({"@type":"City","name":c})),"procedureType":"https://schema.org/NoninvasiveProcedure"},
+faqLd(X.faqs)]}};
+window.LB_concernSchema=name=>{const X=window.LB_CX[name],M=window.LB_META.concerns[name];if(!X||!M)return null;const S=window.LB_SITE,url=S.url+"/concerns/"+M.slug;
+return {"@context":"https://schema.org","@graph":[window.LB_business(),
+{"@type":"WebPage","@id":url,"url":url,"name":M.title,"description":M.desc,"isPartOf":{"@id":S.url+"/#website"},"about":{"@id":S.url+"/#business"},"breadcrumb":crumbs(S,[["Home","/"],["Concerns","/concerns"],[name,"/concerns/"+M.slug]])},
+faqLd(X.faqs)]}};
+window.LB_homeSchema=()=>{const S=window.LB_SITE;return {"@context":"https://schema.org","@graph":[window.LB_business(),{"@type":"WebSite","@id":S.url+"/#website","url":S.url,"name":S.name,"publisher":{"@id":S.url+"/#business"},"inLanguage":"en-CA"}]}};
+window.LB_pageSchema=(page,name)=>{const S=window.LB_SITE,M=window.LB_META.pages[page];if(!M||/noindex/.test(M.robots||""))return null;const url=S.url+(M.path==="/"?"":M.path);
+const g=[window.LB_business(),{"@type":page==="About"?"AboutPage":page==="Contact"?"ContactPage":"WebPage","@id":url+"#page","url":url,"name":M.title,"description":M.desc,"isPartOf":{"@id":S.url+"/#website"},"about":{"@id":S.url+"/#business"},"breadcrumb":crumbs(S,[["Home","/"],[name||page,M.path]])}];
+if(page==="Faq")g.push(faqLd(window.LB_DATA.faqs));
+return {"@context":"https://schema.org","@graph":g}};

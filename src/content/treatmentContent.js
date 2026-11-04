@@ -106,3 +106,171 @@ after:["Drink water through the day","Keep the bandage on for an hour","Call if 
 faqs:[["Why do I need screening?","Some health conditions and medications make IV therapy unsafe. Screening lets Cleo check that an infusion is right for you and choose a suitable blend."],["How long does it take?","Plan for 45 to 60 minutes. The infusion itself usually takes 30 to 45 minutes."],["Does it hurt?","You’ll feel a quick pinch as the catheter goes in. Most clients relax for the rest of the infusion."],["Who shouldn’t have an IV?","People with some heart or kidney conditions, and some people who are pregnant, may not be suitable. Cleo checks at screening."]],
 unique:"Screening and who shouldn’t have an IV",related:["weight","skin","botox"],review:"heather glen"}
 };
+
+// Longer-form sections (rendered between "Why Luxury Beauty" and the FAQs). Typical clinical norms; Cleo to confirm before launch.
+window.LB_TX_DEEP={
+"botox": [
+[
+"Botox in Oakville: what to know before you book",
+[
+"Botox is the best-known brand of neuromodulator, a purified protein that temporarily relaxes the muscles that crease your skin. It does not fill lines. It reduces the movement that causes them, so lines soften and new ones form more slowly.",
+"Because every face moves differently, there is no standard pattern. Cleo watches you frown, squint and raise your brows before she decides where to treat and how much to use. Two people with the same lines can need very different plans."
+]
+],
+[
+"Natural-looking results, not a frozen face",
+[
+"The most common worry is looking frozen. The aim here is the opposite: enough relaxation to soften the lines while you keep your expression. Cleo often starts with a lower dose and adds more at your 2-week review if you want it, which is safer than starting high.",
+"If you have asymmetric brows, a heavy upper lid or very strong muscles, she will explain how that changes the plan, and which areas she would leave alone."
+]
+],
+[
+"How often to repeat treatment",
+[
+"Results fade as the muscle recovers, usually between 3 and 4 months. Many clients book two to three visits a year. Regular treatment can mean the muscles are used less over time, and some clients find they need less product.",
+"Cleo will tell you honestly when you don’t need treatment yet, and she won’t book you in for the sake of it."
+]
+],
+[
+"Safe care from a Nurse Practitioner",
+[
+"Cleo is a Board-Certified Nurse Practitioner and a Registered Nurse since 2013. She reviews your medical history and medications before each visit, uses new sterile supplies every time, and explains the risks and aftercare before you sign consent. Treatment is available for clients across Oakville, Burlington, Milton and Mississauga."
+]
+]
+],
+"fillers": [
+[
+"Dermal fillers in Oakville: what to know before you book",
+[
+"Dermal fillers are soft gels, most often based on hyaluronic acid, placed under the skin to restore volume, add structure or soften deep folds. The effect is immediate and then settles over about two weeks as swelling goes down.",
+"Cleo plans filler around your whole face, not just one area. A flat cheek can make the folds below it look deeper, so treating the cheek first often means you need less filler overall."
+]
+],
+[
+"A conservative, staged approach",
+[
+"Cleo prefers to add filler in stages and review your result at 2 weeks. This keeps your face in proportion and avoids the overfilled look many people worry about. You can always add more, which is easier than taking it back.",
+"She will also tell you when filler isn’t the right answer. Loose skin, for example, may need a different approach, and some areas aren’t worth treating."
+]
+],
+[
+"How long filler lasts",
+[
+"Longevity depends on the product, the area and your own metabolism. Many fillers last between 9 and 18 months, and some areas break down faster than others. Cleo gives you a realistic range for your plan and suggests a review at 9 to 12 months.",
+"Hyaluronic acid filler can be dissolved if you’re unhappy with a result, and Cleo keeps what she needs on site to manage a reaction."
+]
+],
+[
+"Where we treat",
+[
+"The most common areas are the cheeks, chin and jawline. Cleo can also discuss temples, smile lines and under-eye hollows if you’re a suitable candidate. Lips have their own page because they need a different plan."
+]
+]
+],
+"lips": [
+[
+"Lip filler in Oakville: what to know before you book",
+[
+"Lip filler adds shape, symmetry or volume with a soft hyaluronic acid gel. A good result still looks like your own lips, only a little more balanced.",
+"Cleo looks at the ratio of your upper to lower lip, the lip border, your smile and the rest of your face before she suggests anything. Small changes in the right place usually look better than large changes everywhere."
+]
+],
+[
+"Your first lip filler appointment",
+[
+"First-timers often start with a small amount, so you can see how it feels and looks before deciding on more. Cleo explains the plan, numbs the area, places the filler with a fine needle or cannula, and shows you the result before you leave.",
+"Expect swelling for the first few days, and some bruising is possible. Many clients plan their treatment at least two weeks before a big event so everything has time to settle."
+]
+],
+[
+"How long does it last, and can it be dissolved?",
+[
+"Lip filler often lasts 6 to 12 months, because the lips move a lot. Results fade gradually rather than all at once. If you’re unhappy, hyaluronic acid filler can be dissolved, and Cleo will talk this through before you start.",
+"If you have cold sores, tell Cleo at your consultation, as treatment can trigger an outbreak and she may suggest preventive care."
+]
+],
+[
+"Who it suits",
+[
+"Lip filler suits people who want more definition, fullness or symmetry, or who feel their lips have thinned with age. It isn’t for everyone, and Cleo will tell you honestly if she thinks you’re better off without it."
+]
+]
+],
+"fat": [
+[
+"Fat dissolving in Oakville: what to know before you book",
+[
+"Fat-dissolving injections are a non-surgical option for small, stubborn areas of fat, most often under the chin. They work by breaking down fat cells in the treated area, and your body clears them over the following weeks.",
+"They suit people who have a small, defined pocket of fat. They are not a weight-loss treatment, and they can’t tighten loose skin."
+]
+],
+[
+"What to expect",
+[
+"Treatment is a series of small injections after Cleo marks the area. Swelling is expected and can be significant for several days, which is a normal part of the process. Most people need more than one session, spaced several weeks apart.",
+"Results build gradually over weeks. Cleo will give you a realistic idea of how many sessions to expect after she assesses the area."
+]
+],
+[
+"Is it right for you?",
+[
+"Cleo checks your health history, your skin quality and the kind of fullness you have. If your concern is mainly loose skin or a larger amount of fat, she may suggest a different approach and will tell you so.",
+"Treatment is not suitable if you’re pregnant or breastfeeding, or have an infection in the area. Cleo explains the risks and aftercare before you consent."
+]
+]
+],
+"weight": [
+[
+"Medical weight loss in Oakville: what to know before you book",
+[
+"Weight management is personal and often more complicated than willpower. Cleo’s program begins with a full health assessment, so any plan is built around your medical history, your goals and your current circumstances.",
+"Treatment decisions are made by a Nurse Practitioner, and options are only offered if they’re appropriate for you."
+]
+],
+[
+"How the program works",
+[
+"Your first visit is a consultation, with a review of your health history, medications and goals. If treatment is suitable, Cleo explains the options, the risks and what monitoring involves. Regular check-ins follow, so your plan can change as your body and life do.",
+"Cleo may ask for bloodwork or suggest you see your family doctor first, depending on your history."
+]
+],
+[
+"Support beyond the prescription",
+[
+"Lasting change usually involves more than one tool. Cleo discusses nutrition, movement, sleep and stress as part of your plan, and she is clear about what treatment can and can’t do.",
+"Weight loss can also change how your face looks. If you notice volume loss, ask about the staged options on our dermal fillers page."
+]
+]
+],
+"skin": [
+[
+"Skin boosters in Oakville: what to know before you book",
+[
+"Skin boosters are tiny injections of a hydrating gel, usually hyaluronic acid, placed across the skin. Instead of changing your shape, they improve hydration, texture and glow.",
+"They suit people whose skin looks dry, dull or crepey, and who want a fresher look without any change in their features."
+]
+],
+[
+"What a course looks like",
+[
+"Many clients have a short series of sessions a few weeks apart, then a maintenance visit a few times a year. Cleo explains what to expect for your skin at your free consultation.",
+"You may have small bumps and some redness for a day or two. Most people return to normal activity straight away."
+]
+]
+],
+"iv": [
+[
+"IV therapy in Oakville: what to know before you book",
+[
+"IV infusions deliver fluids and nutrients directly into the bloodstream. Many clients choose them for hydration and nutrient support when they feel run-down.",
+"Every visit starts with a health screening by Cleo, because IV therapy isn’t right for everyone. She will tell you honestly what an infusion can and can’t do, and she doesn’t make medical claims about curing conditions."
+]
+],
+[
+"What to expect",
+[
+"An infusion usually takes between 30 and 60 minutes. You’ll sit comfortably while the fluid runs, and Cleo monitors you throughout. Some people notice a small bruise where the needle went in."
+]
+]
+]
+};

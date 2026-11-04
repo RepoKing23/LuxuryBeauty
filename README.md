@@ -1,49 +1,34 @@
 # Luxury Beauty by Cleo R. — static site (https://luxurybeautyaesthetic.com)
 
-Plain static site. No vercel.json and no build step: every page has its own folder with an index.html, which Vercel serves automatically.
+React site that is **prerendered to plain HTML at build time**. Every page ships with its full content, title, meta tags and JSON-LD in the HTML, then React hydrates it for client-side navigation. No server and no runtime build: Vercel serves the committed files as-is.
 
-## Deploy
-1. Put the CONTENTS of this folder at the root of your GitHub repo. Delete any old vercel.json / now.json.
-2. Vercel → Add New → Project → import the repo. Framework Preset: Other. Build Command, Output Directory, Root Directory: empty.
-3. Deploy, then add luxurybeautyaesthetic.com under Settings → Domains.
+## Edit → build → deploy
+Source lives in `src/`. Generated files (`index.html`, every `*/index.html`, `404.html`, `sitemap.xml`, `js/app.*.js`, `styles.*.css`) are **build output and are committed**. Don't edit them by hand.
 
-## Pages (29)
-- /
-- /treatments
-- /concerns
-- /about
-- /cleo-difference
-- /your-visit
-- /faq
-- /inclusive-care
-- /before-after
-- /contact
-- /locations
-- /policies
-- /privacy
-- /thank-you
-- 404.html
-- /treatments/botox-neurotoxins
-- /treatments/dermal-fillers
-- /treatments/lip-filler
-- /treatments/fat-dissolving
-- /treatments/weight-loss
-- /treatments/skin-boosters
-- /treatments/iv-infusions
-- /concerns/fine-lines-wrinkles
-- /concerns/facial-volume-definition
-- /concerns/skin-hydration-radiance
-- /concerns/wellness-weight-management
-- /med-spa-burlington
-- /med-spa-milton
-- /med-spa-mississauga
-- /concerns/lips → redirects to /treatments/lip-filler
+```bash
+npm install          # once
+npm run build        # bundles React (production), prerenders all pages, rewrites sitemap.xml
+node tools/serve.mjs # preview at http://localhost:4173
+npm run images       # converts any new PNG/JPG in assets/images to WebP
+```
+Commit the regenerated files and push. On Vercel use Framework Preset **Other**, with Build Command, Output Directory and Root Directory empty.
 
-## SEO
-- sitemap.xml: 25 indexable URLs; robots.txt points to it.
-- Noindex: /policies, /privacy, /thank-you, 404.html.
-- Location pages (/locations, /med-spa-burlington, /med-spa-milton, /med-spa-mississauga) include MedicalBusiness, BreadcrumbList and FAQPage schema.
-- After deploying: resubmit sitemap in Search Console; test schema at https://search.google.com/test/rich-results
+## Where things are
+- `src/content/seoMeta.js`: titles, descriptions, URLs and all JSON-LD schema (business, service, FAQ, breadcrumbs).
+- `src/content/treatmentContent.js`, `concernContent.js`, `areaContent.js`, `data.js`: page copy.
+- `src/jsx/*.jsx`: page layouts. `src/ds.js`: shared components (header, footer, cards). `src/app.jsx`: router.
+- `vercel.json`: clean URLs, 301 redirects for removed pages, and cache headers.
 
-## Run locally
-`npx serve .`
+## Pages
+- `/`, `/treatments`, `/concerns`, `/about`, `/your-visit`, `/faq`, `/before-after`, `/contact`, `/locations`
+- `/treatments/{botox-neurotoxins, dermal-fillers, lip-filler, fat-dissolving, weight-loss, skin-boosters, iv-infusions}`
+- `/concerns/{under-eye-hollows-tired-eyes, jaw-clenching-teeth-grinding, smile-lines-marionette-lines}`
+- `/med-spa-burlington`, `/med-spa-milton`, `/med-spa-mississauga`
+- Noindex: `/policies`, `/privacy`, `/thank-you`, `404.html`
+
+Removed (301-redirected in `vercel.json`): `/cleo-difference` and `/inclusive-care` (merged into `/about`), and the four old concern pages that competed with treatment pages.
+
+## After deploying
+1. Resubmit `sitemap.xml` in Search Console and request indexing for `/about` and the three new concern pages.
+2. Test schema at https://search.google.com/test/rich-results
+3. Review the three new concern pages and the longer treatment sections with Cleo before launch (typical clinical norms; Cleo to confirm).
