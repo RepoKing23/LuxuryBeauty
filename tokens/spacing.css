@@ -1,0 +1,26 @@
+:root{
+/* Section rhythm (lib/styles.ts sectionPadding) */
+--section-pad-x:max(6vw,32px);
+--section-pad-y:130px;
+--section-pad-x-mobile:24px;
+--section-pad-y-mobile:85px;
+--header-h:88px;
+--header-h-mobile:72px;
+--content-max:1440px;
+--heading-gap:72px; /* SectionHeading mb-18 */
+
+/* Radii — brand UI is square; radius only for shadcn defaults + circles */
+--radius:0.625rem;
+--radius-none:0;
+--radius-full:9999px;
+
+/* Elevation — almost none */
+--shadow-menu:0 16px 28px rgb(37 40 42 / 0.08);
+
+/* Motion */
+--ease-brand:cubic-bezier(0.22,1,0.36,1); /* @kind other */
+--dur-fast:150ms; /* @kind other */
+--dur-image:450ms; /* @kind other */
+--dur-menu:420ms; /* @kind other */
+--dur-reveal:950ms; /* @kind other */
+}

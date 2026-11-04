@@ -1,0 +1,53 @@
+:root{
+/* Base palette (app/globals.css) */
+--lb-ink:#25282a;
+--lb-white:#ffffff;
+--lb-blush:#f8edeb;
+--lb-linen:#f5ebe0;
+--lb-rose-mist:#fae1dd;
+--lb-clinical:#f6e3e0;
+--lb-peach:#fec5bb;
+--lb-taupe:#ded6ce;
+--lb-slate:#62686b;
+--lb-mauve:#a85f6a;
+--lb-red:#dc2626;
+--lb-overlay:rgb(20 24 25 / 0.56);
+
+/* shadcn semantic (light) */
+--background:var(--lb-white);
+--foreground:var(--lb-ink);
+--card:var(--lb-white);
+--card-foreground:var(--lb-ink);
+--primary:var(--lb-ink);
+--primary-foreground:var(--lb-white);
+--secondary:var(--lb-blush);
+--secondary-foreground:var(--lb-ink);
+--muted:var(--lb-linen);
+--muted-foreground:var(--lb-slate);
+--accent:var(--lb-rose-mist);
+--accent-foreground:var(--lb-ink);
+--destructive:var(--lb-red);
+--border:var(--lb-taupe);
+--input:var(--lb-taupe);
+--ring:var(--lb-mauve);
+
+/* Brand surfaces (named in source) */
+--surface:var(--lb-blush);
+--surface-warm:var(--lb-linen);
+--surface-soft:var(--lb-rose-mist);
+--clinical:var(--lb-clinical);
+--brand-accent:var(--lb-peach);
+--brand-muted:var(--lb-slate);
+--brand-green:var(--lb-mauve); /* named "green" in source; it is a dusty mauve */
+
+/* Aliases */
+--text-body:var(--foreground);
+--text-muted:var(--brand-muted);
+--text-accent:var(--brand-green);
+--text-inverse:var(--lb-white);
+--surface-page:var(--background);
+--surface-card:var(--card);
+--rule:var(--border);
+--rule-strong:rgb(37 40 42 / 0.2);
+--header-bg:rgb(255 255 255 / 0.94);
+}

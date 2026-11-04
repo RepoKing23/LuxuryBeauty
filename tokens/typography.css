@@ -1,0 +1,38 @@
+:root{
+--font-display:"Bellefair",Georgia,serif;
+--font-body:"Inter",system-ui,sans-serif;
+--font-signature:"Mrs Saint Delafield",cursive;
+--font-serif:var(--font-display);
+--font-sans:var(--font-body);
+--font-script:var(--font-signature);
+
+/* Body */
+--text-base-size:15px;
+--text-base-leading:1.7;
+--text-lead-size:20px;   /* text-xl leading-normal */
+--text-intro-size:18px;  /* text-lg hero intros */
+--text-small-size:14px;
+
+/* Display (fluid, from source) */
+--display-hero:clamp(64px,7.2vw,112px); /* @kind font */
+--display-page:clamp(72px,10vw,142px); /* @kind font */
+--display-section:clamp(50px,6vw,88px); /* @kind font */
+--display-statement:clamp(64px,8vw,118px); /* @kind font */
+--display-cta:clamp(58px,8vw,110px); /* @kind font */
+--display-card:clamp(30px,2.3vw,42px); /* @kind font */
+--display-leading:0.98;
+--display-tracking:-0.02em;
+--serif-quote-size:26px;
+--serif-list-size:24px;
+--serif-faq-size:25px;
+
+/* Micro-caps labels */
+--label-xs:8px;
+--label-sm:9px;
+--label-md:10px;
+--label-nav:11px;
+--tracking-nav:0.08em;
+--tracking-cta:0.14em;
+--tracking-label:0.15em;
+--tracking-eyebrow:0.2em;
+}

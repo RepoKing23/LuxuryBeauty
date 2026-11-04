@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><base href="/"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Aesthetic Treatments in Oakville | Luxury Beauty by Cleo R.</title><meta name="description" content="Aesthetic treatments in Oakville: Botox, dermal fillers, lip filler, fat dissolving, skin boosters, IV therapy and medical weight loss. Free NP consultation."><meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"><link rel="canonical" href="https://luxurybeautyaesthetic.com/treatments"><meta property="og:locale" content="en_CA"><meta property="og:type" content="website"><meta property="og:title" content="Aesthetic Treatments in Oakville | Luxury Beauty by Cleo R."><meta property="og:description" content="Aesthetic treatments in Oakville: Botox, dermal fillers, lip filler, fat dissolving, skin boosters, IV therapy and medical weight loss. Free NP consultation."><meta property="og:url" content="https://luxurybeautyaesthetic.com/treatments"><meta property="og:site_name" content="Luxury Beauty by Cleo R."><meta property="og:image" content="https://luxurybeautyaesthetic.com/assets/images/cleo-hero-blazer.webp"><meta name="twitter:card" content="summary_large_image"><meta name="google-site-verification" content="YRgNkUO9V9HT7ugG-mby_EjH4SFpdBaLlNuj4dc9TCo"><link rel="icon" type="image/png" href="/assets/logo-icon.png"><script>window.LB_HISTORY=true</script><link rel="stylesheet" href="/styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="/js/ds-bundle.js"></script><script src="/js/data.js"></script><script src="/js/treatmentContent.js"></script><script src="/js/concernContent.js"></script><script src="/js/seoMeta.js"></script><script src="/js/scrollReveal.js"></script></head><body><div id="root"></div>
+<script type="text/babel" src="/jsx/Shared.jsx"></script><script type="text/babel" src="/jsx/HomeSeo.jsx"></script><script type="text/babel" src="/jsx/Home.jsx"></script><script type="text/babel" src="/jsx/Treatments.jsx"></script><script type="text/babel" src="/jsx/TreatmentDetail.jsx"></script><script type="text/babel" src="/jsx/ConcernDetail.jsx"></script><script type="text/babel" src="/jsx/Pages.jsx"></script><script type="text/babel" src="/jsx/MorePages.jsx"></script>
+<script type="text/babel">
+const {SiteHeader,SiteFooter}=window.LuxuryBeautyByCleoRDesignSystem_8fa9a4;
+const ROUTES={"Book a consultation":"Contact","New Here?":"Visit","The Cleo Difference":"Difference","Before & After":"BeforeAfter","FAQs":"Faq","Inclusive care":"Inclusive","Privacy":"Privacy","Clinic policies":"Policies"};
+const NAVLABEL={Visit:"New Here?",Difference:"The Cleo Difference",BeforeAfter:"Before & After",Faq:"FAQs",treatment:"Treatments",concern:"Concerns"};
+const IMG="/assets/images/";
+const MENUS={Treatments:{columns:[
+{title:"Treatments",items:[
+{label:"Botox & Neurotoxins",desc:"Forehead lines, frown lines, crow’s feet",image:IMG+"treatment-botox.webp"},
+{label:"Dermal Fillers",desc:"Cheeks, chin and jawline",image:IMG+"treatment-fillers.webp"},
+{label:"Lip Filler",badge:"New",desc:"Shape, balance and fullness",image:IMG+"treatment-fillers.webp"},
+{label:"Fat Dissolving",desc:"Double chin and stubborn areas",image:IMG+"treatment-fat-dissolving.webp"},
+{label:"Skin Boosters",desc:"Hydration and glow",image:IMG+"treatment-skin-boosters.webp"},
+{label:"Weight Loss Treatments",desc:"Medically supervised support",image:IMG+"treatment-weight-loss.webp"},
+{label:"IV Infusions",desc:"Hydration and nutrient support",image:IMG+"treatment-iv-infusion.webp"}],all:{label:"View all treatments",to:"Treatments"}},
+{title:"Plan your visit",items:[{label:"Your first visit",to:"Visit",desc:"Free consultation, step by step"},{label:"Before & After",to:"BeforeAfter"},{label:"Inclusive care",to:"Inclusive",desc:"Care for every skin tone"},{label:"FAQs",to:"Faq"}]}],
+feature:{image:IMG+"consultation.webp",title:"Not sure where to start?",text:"Tell Cleo what you’d like to change. Your consultation is free.",cta:"Book a consultation",to:"Book a consultation"}}};
+function App(){
+const D=window.LB_DATA;
+const H=!!window.LB_HISTORY;
+const [r,setR]=React.useState(()=>{if(H)return window.LB_pathToRoute(location.pathname);try{return JSON.parse(localStorage.getItem("lb-route"))||{page:"Home"}}catch(e){return {page:"Home"}}});
+React.useEffect(()=>{if(!H)return;const f=()=>setR(window.LB_pathToRoute(location.pathname));addEventListener("popstate",f);return()=>removeEventListener("popstate",f)},[]);
+const go=(p,item)=>{let n;const tr=D.treatments.find(t=>t.name===p);
+if(p==="treatment")n={page:"treatment",key:item.slug};else if(p==="concern"&&item.name==="Lips")n={page:"treatment",key:"lips"};else if(p==="concern")n={page:"concern",key:item.name};else if(tr)n={page:"treatment",key:tr.slug};else n={page:ROUTES[p]||p};
+setR(n);if(H)history.pushState(null,"",window.LB_routeToPath(n));else localStorage.setItem("lb-route",JSON.stringify(n));window.scrollTo(0,0)};
+const P=r.page;let body;
+React.useEffect(()=>{window.LB_applyMeta(P,r.key)},[P,r.key]);
+React.useEffect(()=>{window.LB_navEntrance();const id=setTimeout(()=>window.LB_scrollReveal(),30);return()=>clearTimeout(id)},[P,r.key]);
+if(P==="treatment"){const t=D.treatments.find(x=>x.slug===r.key)||D.treatments[0];body=<TreatmentDetail t={t} go={go}/>}
+else if(P==="concern"){const c=D.concerns.find(x=>x.name===r.key)||D.concerns[0];body=window.LB_CX[c.name]?<ConcernDetailV2 c={c} go={go}/>:<ConcernDetail c={c} go={go}/>}
+else{const M={Treatments:Treatments,Concerns:Concerns,About:About,Contact:Contact,BeforeAfter:BeforeAfter,Difference:Difference,Visit:Visit,Faq:Faq,Inclusive:Inclusive,Policies:Policies,Privacy:Privacy,ThankYou:ThankYou,NotFound:NotFound};const C=M[P]||Home;body=<C go={go} openTreatment={t=>go("treatment",t)}/>}
+return <><SiteHeader logoSrc="/assets/logo-icon.png" current={NAVLABEL[P]||P} menus={MENUS} onNavigate={go}/><div onClickCapture={e=>{const a=e.target.closest("a");if(a&&a.getAttribute("href")==="#")e.preventDefault()}}>{body}</div><SiteFooter logoSrc="/assets/logo-icon.png" onNavigate={go}/></>}
+const Root=()=>{const [ok,setOk]=React.useState(!!window.Home);React.useEffect(()=>{if(!ok){const i=setInterval(()=>{if(window.Home&&window.Treatments&&window.TreatmentDetail&&window.ConcernDetailV2&&window.Contact&&window.Privacy){setOk(true);clearInterval(i)}},50);return()=>clearInterval(i)}},[]);return ok?<App/>:null};
+ReactDOM.createRoot(document.getElementById("root")).render(<Root/>);
+</script></body></html>
